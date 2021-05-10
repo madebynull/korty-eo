@@ -12,6 +12,7 @@
     "@nuxtjs/pwa": "^3.3.5",
     "core-js": "^3.9.1",
     "gsap": "^3.6.1",
+    "locomotive-scroll": "^4.1.1",
     "nuxt": "^2.15.3",
     "sass": "^1.32.12",
     "sass-loader": "10.1.0"

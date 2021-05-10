@@ -2,8 +2,7 @@
   <LocomotiveScroll
     ref="scroller"
     :getted-options="{
-      offset: ['30%', 0],
-      direction: 'vertical'
+      direction: 'horizontal'
       // Other options
     }"
   >
@@ -28,6 +27,9 @@ h1 {
 }
 
 .tall {
-  height: 300vh;
+  width: 300vh;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
 }
 </style>
