@@ -27,4 +27,8 @@ h1 {
   overflow: hidden;
   display: flex;
 }
+
+.scroll-in {
+  height: 80vh;
+}
 </style>

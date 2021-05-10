@@ -54,7 +54,6 @@ export default {
   },
   methods: {
     onScroll(e) {
-      console.log("scrolling");
       if (typeof this.$store._mutations["app/setScroll"] !== "undefined") {
         this.$store.commit("app/setScroll", {
           isScrolling: this.locomotive.scroll.isScrolling,
