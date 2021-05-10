@@ -15,12 +15,7 @@
   </LocomotiveScroll>
 </template>
 
-<script>
-import LocomotiveScroll from "~/components/LocomotiveScroll";
-export default {
-  components: { LocomotiveScroll }
-};
-</script>
+<script></script>
 
 <style lang="scss" scoped>
 h1 {
