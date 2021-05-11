@@ -15,23 +15,24 @@
     margin-bottom: 70px;
   }
   &__desktop {
-    display: grid;
     width: 100%;
     height: 100%;
     padding: 16px 0;
+    display: none;
+    @include media(">tablet") {
+      display: grid;
+    }
 
     > div {
       grid-area: 1/1;
       display: grid;
       grid-template-columns: repeat(12, 1fr);
-      grid-template-rows: repeat(12, 1fr);
+      grid-template-rows: repeat(12, calc(100% / 12));
       grid-auto-flow: row dense;
       grid-column-gap: 20px;
     }
 
     .hero-content {
-      position: relative;
-      z-index: 1;
       .hero-image {
         grid-column-start: 6;
         grid-column-end: 12;
@@ -56,6 +57,13 @@
     }
 
     .hero-links {
+      position: relative;
+      z-index: 2;
+      > a {
+        grid-column-start: 10;
+        grid-column-end: 13;
+        grid-row-start: 5;
+      }
     }
   }
 }

@@ -6,12 +6,21 @@
         <div class="c-image"></div>
       </div>
     </div>
-    <div class="hero-links"></div>
+    <div class="hero-links">
+      <nuxt-link to="/profile">
+        <circular-link>
+          Profile
+        </circular-link>
+      </nuxt-link>
+    </div>
   </div>
 </template>
 
 <script>
-export default {};
+import CircularLink from "../CircularLink/CircularLink.vue";
+export default {
+  components: { CircularLink }
+};
 </script>
 
 <style lang="scss" scoped></style>
