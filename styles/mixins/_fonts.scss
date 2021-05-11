@@ -1,0 +1,30 @@
+@mixin heading-1 {
+  font-size: 200px;
+  letter-spacing: -7.5%;
+  font-weight: 300;
+  line-height: 100%;
+}
+
+@mixin heading-2 {
+  @include heading-1;
+  font-size: 120px;
+}
+
+@mixin heading-3 {
+  font-size: 48px;
+  font-weight: 500;
+  letter-spacing: -5%;
+  line-height: 100%;
+}
+
+@mixin title-small {
+  letter-spacing: -2.5%;
+  font-size: 15px;
+  line-height: 100%;
+  font-weight: 400;
+}
+
+@mixin paragraph {
+  @include title-small;
+  line-height: 130%;
+}

@@ -1,0 +1,61 @@
+.c-landing {
+  padding: 48px 52px;
+  @include media(">tablet") {
+    height: 100vh;
+    max-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 0%;
+  }
+  &__header {
+    @include flex(space-between, center);
+    @include paragraph;
+    font-weight: 500;
+    text-transform: uppercase;
+    margin-bottom: 70px;
+  }
+  &__desktop {
+    display: grid;
+    width: 100%;
+    height: 100%;
+    padding: 16px 0;
+
+    > div {
+      grid-area: 1/1;
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      grid-template-rows: repeat(12, 1fr);
+      grid-auto-flow: row dense;
+      grid-column-gap: 20px;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      .hero-image {
+        grid-column-start: 6;
+        grid-column-end: 12;
+        grid-row: span 11;
+        display: grid;
+        > div {
+          grid-area: 1 / 1;
+        }
+
+        .image-mask {
+          position: relative;
+          z-index: 1;
+          // background: $col-cream;
+        }
+
+        .c-image {
+          background: url("https://res.cloudinary.com/dmwfd0zhh/image/upload/q_auto,f_auto/v1620697813/Korty/image_2_gijibv.jpg");
+          background-position: 50% 50%;
+          background-size: cover;
+        }
+      }
+    }
+
+    .hero-links {
+    }
+  }
+}
