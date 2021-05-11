@@ -43,6 +43,6 @@ svg textPath {
   font-family: "Fraunces";
   text-transform: uppercase;
   letter-spacing: 35px;
-  fill: #111;
+  fill: #000000;
 }
 </style>
