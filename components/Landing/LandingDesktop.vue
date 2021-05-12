@@ -7,9 +7,24 @@
       </div>
     </div>
     <div class="hero-links">
-      <nuxt-link to="/profile">
+      <div class="c-hoverlink hover-link-1">
+        <hover-link
+          label="VLOGS + INTERVIEWS"
+          assetUrl="https://res.cloudinary.com/dmwfd0zhh/image/upload/q_auto,f_auto/v1620697813/Korty/image_2_gijibv.jpg"
+          href="/"
+        />
+      </div>
+
+      <div class="c-hoverlink hover-link-2">
+        <hover-link
+          label="VLOGS + INTERVIEWS"
+          assetUrl="https://res.cloudinary.com/dmwfd0zhh/image/upload/q_auto,f_auto/v1620697813/Korty/image_2_gijibv.jpg"
+          href="/"
+        />
+      </div>
+      <nuxt-link class="c-circular-link" to="/profile">
         <circular-link>
-          Profile
+          View Profile
         </circular-link>
       </nuxt-link>
     </div>
@@ -18,8 +33,9 @@
 
 <script>
 import CircularLink from "../CircularLink/CircularLink.vue";
+import HoverLink from "../HoverLink/HoverLink.vue";
 export default {
-  components: { CircularLink }
+  components: { CircularLink, HoverLink }
 };
 </script>
 

@@ -23,8 +23,9 @@
     <text dy="70" textLength="1220">
       <textPath xlink:href="#textcircle">
         <slot />
+        •
         <slot />
-        <slot />
+        •
       </textPath>
     </text>
   </svg>
@@ -40,9 +41,9 @@ svg {
 }
 svg textPath {
   font-size: 35px;
-  font-family: "Fraunces";
+  font-family: "Grotesk";
   text-transform: uppercase;
-  letter-spacing: 35px;
+  letter-spacing: 25px;
   fill: #000000;
 }
 </style>

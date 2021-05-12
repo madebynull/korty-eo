@@ -49,3 +49,88 @@ h5,
 p {
   margin: 0;
 }
+
+.menu__item {
+  flex: none;
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+  padding-left: 5rem;
+}
+
+.menu__item:hover::before {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.menu__item-text {
+  position: relative;
+  cursor: pointer;
+  padding: 0.5rem;
+  display: block;
+  overflow: hidden;
+  font-size: 6vw;
+}
+
+.menu__item-sub {
+  display: none;
+  text-transform: uppercase;
+  font-weight: bold;
+  white-space: nowrap;
+  align-items: center;
+  position: relative;
+  margin-left: 2rem;
+  padding-left: 3rem;
+  opacity: 0;
+  transform: translateX(-1rem);
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+.menu__item:hover .menu__item-sub {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.menu__item-sub::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 15%;
+  width: 1px;
+  height: 70%;
+  background: currentColor;
+  transform-origin: 0 100%;
+  transform: rotate(22.5deg) scale3d(1, 0, 1);
+  transition: transform 0.3s;
+}
+
+.menu__item:hover .menu__item-sub::before {
+  transform: rotate(22.5deg) scale3d(1, 1, 1);
+}
+
+.hover-reveal {
+  position: absolute;
+  z-index: -1;
+  width: 220px;
+  height: 320px;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.hover-reveal__inner {
+  overflow: hidden;
+}
+
+.hover-reveal__inner,
+.hover-reveal__img {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.hover-reveal__img {
+  background-size: cover;
+  background-position: 50% 50%;
+}

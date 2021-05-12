@@ -59,10 +59,20 @@
     .hero-links {
       position: relative;
       z-index: 2;
-      > a {
+      .c-circular-link {
         grid-column-start: 10;
         grid-column-end: 13;
         grid-row-start: 5;
+      }
+
+      .c-hoverlink {
+        @include heading-2;
+        grid-column-start: 2;
+        grid-column-end: 10;
+
+        &.hover-link-2 {
+          grid-row-start: 3;
+        }
       }
     }
   }
