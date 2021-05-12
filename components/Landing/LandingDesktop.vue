@@ -12,7 +12,9 @@
           label="VLOGS + INTERVIEWS"
           assetUrl="https://res.cloudinary.com/dmwfd0zhh/image/upload/q_auto,f_auto/v1620697813/Korty/image_2_gijibv.jpg"
           href="/"
-        />
+        >
+          VL<span>O</span>GS + INTERVIEWS
+        </hover-link>
       </div>
 
       <div class="c-hoverlink hover-link-2">
@@ -20,7 +22,9 @@
           label="VLOGS + INTERVIEWS"
           assetUrl="https://res.cloudinary.com/dmwfd0zhh/image/upload/q_auto,f_auto/v1620697813/Korty/image_2_gijibv.jpg"
           href="/"
-        />
+        >
+          VL<span>O</span>GS + INTERVIEWS
+        </hover-link>
       </div>
       <nuxt-link class="c-circular-link" to="/profile">
         <circular-link>

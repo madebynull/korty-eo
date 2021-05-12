@@ -1,7 +1,9 @@
 <template>
   <!-- <div> -->
   <a :href="href" ref="hoverLink" class="menu__item">
-    {{ label }}
+    <span class="menu__item-label">
+      <slot />
+    </span>
   </a>
   <!-- </div> -->
 </template>
@@ -18,7 +20,7 @@ export default {
   mounted() {
     const hoverRef = this.$refs.hoverLink;
     // console.log(this.$props);
-    new Menu(hoverRef);
+    // new Menu(hoverRef);
   }
 };
 </script>
