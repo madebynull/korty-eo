@@ -59,13 +59,14 @@
         width: 90px;
         height: 90px;
         grid-column-start: 1;
-        // grid-column-end: 3;
+        grid-column-end: 2;
         position: relative;
         z-index: 5;
         grid-row-start: 10;
         border-radius: 50%;
         position: relative;
-        // top: 150%;
+        margin-top: calc(100 / 12 * 1px);
+        // transform: translateY(15%);
         @include flex(center, center);
         @include paragraph;
         text-transform: uppercase;
@@ -125,7 +126,6 @@
 
         p {
           @include paragraph;
-
           max-width: 210px;
           width: 100%;
         }
