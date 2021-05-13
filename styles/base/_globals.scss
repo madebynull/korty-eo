@@ -1,7 +1,6 @@
 body {
   margin: 0;
   padding: 0;
-  overflow: hidden;
   background: $col-cream;
   font-weight: 400;
   color: $col-black;
@@ -60,12 +59,7 @@ p {
   position: relative;
 
   &-label {
-    color: #000000;
     mix-blend-mode: overlay;
-
-    span {
-      font-family: $fontSerif;
-    }
   }
 }
 
@@ -94,4 +88,8 @@ p {
 .hover-reveal__video {
   object-fit: cover;
   object-position: 50% 50%;
+}
+
+.fraunces {
+  font-family: $fontSerif;
 }

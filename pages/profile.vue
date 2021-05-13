@@ -33,7 +33,7 @@ gsap.registerPlugin(ScrollTrigger);
 export default {
   mounted() {
     this.initScrolltrigger();
-    const elements = document.querySelectorAll(".scroll-in");
+    const elements = gsap.utils.toArray(".scroll-in");
     elements.forEach(element => this.elementAnimation(element));
   },
   methods: {
