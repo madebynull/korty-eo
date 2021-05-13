@@ -1,0 +1,12 @@
+.c-profile {
+  padding: 48px 52px;
+  min-height: 100vh;
+
+  &__header {
+    @include flex(space-between, center);
+    @include paragraph;
+    font-weight: 500;
+    text-transform: uppercase;
+    margin-bottom: 70px;
+  }
+}

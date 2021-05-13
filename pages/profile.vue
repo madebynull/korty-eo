@@ -3,24 +3,24 @@
     ref="scroller"
     :getted-options="{
       offset: ['30%', 0],
+      smooth: true,
       direction: 'vertical'
       // Other options
     }"
   >
-    <div class="tall">
-      <h1>Korty</h1>
-      <p>Website coming up</p>
-      <nuxt-link to="/archive">archive</nuxt-link>
-    </div>
-
-    <div class="scroll-in">
-      Scroll In
-    </div>
-    <div class="scroll-in">
-      Scroll In
-    </div>
-    <div class="scroll-in">
-      Scroll In
+    <div class="c-profile">
+      <div class="c-profile__header">
+        <nuxt-link to="/profile">
+          <AnimatedLink class="c-bezier">
+            Profile
+          </AnimatedLink>
+        </nuxt-link>
+        <nuxt-link to="/archive">
+          <AnimatedLink class="c-bezier">
+            Archive
+          </AnimatedLink>
+        </nuxt-link>
+      </div>
     </div>
   </LocomotiveScroll>
 </template>
@@ -28,9 +28,11 @@
 <script>
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import AnimatedLink from "../components/AnimatedLink/AnimatedLink.vue";
 gsap.registerPlugin(ScrollTrigger);
 
 export default {
+  components: { AnimatedLink },
   mounted() {
     this.initScrolltrigger();
     const elements = gsap.utils.toArray(".scroll-in");
@@ -74,17 +76,4 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-h1 {
-  font-family: "Fraunces", sans-serif;
-}
-
-.tall {
-  height: 300vh;
-}
-
-.scroll-in {
-  height: 80vh;
-  font-size: 40px;
-}
-</style>
+<style lang="scss" scoped></style>
