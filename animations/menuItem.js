@@ -24,8 +24,6 @@ export default class MenuItem {
     // this.inMenuPosition = inMenuPosition;
     // menu item properties that will animate as we move the mouse around the menu
     this.animatableProperties = animatableProperties;
-    // the item text
-    this.DOM.textInner = this.DOM.el.querySelector(".menu__item-textinner");
     // create the image structure
     this.layout();
     // initialize some events
@@ -41,20 +39,9 @@ export default class MenuItem {
   // </div>
   layout() {
     // this is the element that gets its position animated (and perhaps other properties like the rotation etc..)
-    this.DOM.reveal = document.createElement("div");
-    this.DOM.reveal.className = "hover-reveal";
-    // the next two elements could actually be only one, the image element
-    // adding an extra wrapper (revealInner) around the image element with overflow hidden, gives us the possibility to scale the image inside
-    this.DOM.revealInner = document.createElement("div");
-    this.DOM.revealInner.className = "hover-reveal__inner";
-    this.DOM.revealImage = document.createElement("div");
-    this.DOM.revealImage.className = "hover-reveal__img";
-    // this.DOM.revealImage.style.backgroundImage = `url(${this.imageUrl})`;
-    this.DOM.revealImage.style.backgroundImage = `url(https://res.cloudinary.com/dmwfd0zhh/image/upload/q_auto,f_auto/v1620697813/Korty/image_2_gijibv.jpg)`;
-
-    this.DOM.revealInner.appendChild(this.DOM.revealImage);
-    this.DOM.reveal.appendChild(this.DOM.revealInner);
-    this.DOM.el.appendChild(this.DOM.reveal);
+    this.DOM.reveal = this.DOM.el.querySelector(".hover-reveal");
+    this.DOM.revealInner = this.DOM.el.querySelector(".hover-reveal__inner");
+    this.DOM.revealAsset = this.DOM.el.querySelector(".hover-reveal__video");
   }
   // calculate the position/size of both the menu item and reveal element
   calcBounds() {
@@ -68,6 +55,8 @@ export default class MenuItem {
     this.mouseenterFn = ev => {
       // show the image element
       this.showImage();
+      // this.DOM.revealAsset.autoplay = true;
+      // this.DOM.revealAsset.load();
       this.firstRAFCycle = true;
       // start the render loop animation (rAF)
       this.loopRender();
@@ -86,15 +75,16 @@ export default class MenuItem {
   showImage() {
     // kill any current tweens
     gsap.killTweensOf(this.DOM.revealInner);
-    gsap.killTweensOf(this.DOM.revealImage);
+    gsap.killTweensOf(this.DOM.revealAsset);
 
     this.tl = gsap
       .timeline({
         onStart: () => {
+          // set a high z-index value so image appears on top of other elements
+          gsap.set(this.DOM.el, { zIndex: 4 });
+
           // show the image element
           this.DOM.reveal.style.opacity = 1;
-          // set a high z-index value so image appears on top of other elements
-          // gsap.set(this.DOM.el, { zIndex: images.length });
         }
       })
       // animate the image wrap
@@ -105,7 +95,7 @@ export default class MenuItem {
       })
       // animate the image element
       .to(
-        this.DOM.revealImage,
+        this.DOM.revealAsset,
         0.2,
         {
           ease: "Sine.easeOut",
@@ -119,7 +109,7 @@ export default class MenuItem {
   hideImage() {
     // kill any current tweens
     gsap.killTweensOf(this.DOM.revealInner);
-    gsap.killTweensOf(this.DOM.revealImage);
+    gsap.killTweensOf(this.DOM.revealAsset);
 
     this.tl = gsap
       .timeline({
@@ -135,7 +125,7 @@ export default class MenuItem {
         x: direction.x < 0 ? "100%" : "-100%"
       })
       .to(
-        this.DOM.revealImage,
+        this.DOM.revealAsset,
         0.2,
         {
           ease: "Sine.easeOut",

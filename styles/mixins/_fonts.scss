@@ -11,20 +11,29 @@
 }
 
 @mixin heading-3 {
-  font-size: 48px;
+  font-size: 34px;
   font-weight: 500;
-  letter-spacing: -5%;
   line-height: 100%;
+  letter-spacing: -2px;
 }
 
 @mixin title-small {
-  letter-spacing: -2.5%;
   font-size: 15px;
-  line-height: 100%;
   font-weight: 400;
+  line-height: 1;
 }
 
 @mixin paragraph {
   @include title-small;
-  line-height: 130%;
+  letter-spacing: normal;
+  line-height: 1.2;
+  font-weight: 400;
+  // font-size: 16px;
+}
+
+@mixin variableFonts($min, $max) {
+  --max-size: #{$max};
+  --min-size: #{$min};
+
+  font-size: var(--responsive);
 }

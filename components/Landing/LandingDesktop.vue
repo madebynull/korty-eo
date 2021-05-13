@@ -5,26 +5,80 @@
         <div class="image-mask"></div>
         <div class="c-image"></div>
       </div>
+      <div class="c-name__image">
+        <img
+          src="https://res.cloudinary.com/dmwfd0zhh/image/upload/v1620697813/Korty/image_20_bufuoi.jpg"
+          alt=""
+        />
+      </div>
+      <div class="c-name__details">
+        <h1 class="details-title">korty_eo</h1>
+        <p class="details-jd">
+          FILMAKER & <br />
+          YOUTUBER
+        </p>
+      </div>
+
+      <button class="credits-link">
+        credits
+      </button>
     </div>
     <div class="hero-links">
       <div class="c-hoverlink hover-link-1">
-        <hover-link
-          label="VLOGS + INTERVIEWS"
-          assetUrl="https://res.cloudinary.com/dmwfd0zhh/image/upload/q_auto,f_auto/v1620697813/Korty/image_2_gijibv.jpg"
-          href="/"
-        >
-          VL<span>O</span>GS + INTERVIEWS
-        </hover-link>
+        <p>
+          Based in Lagos, Nigeria. Korty runs a youtube channel where she posts
+          -
+        </p>
+        <div>
+          <hover-link
+            label="VLOGS + INTERVIEWS"
+            assetUrl="https://res.cloudinary.com/dmwfd0zhh/image/upload/q_auto,f_auto/v1620697813/Korty/image_2_gijibv.jpg"
+            href="/"
+          >
+            <sup class="c-hoverlink__super">01</sup>
+            VL<span>O</span>GS <span>+</span> INTERVIEWS
+          </hover-link>
+        </div>
       </div>
 
       <div class="c-hoverlink hover-link-2">
-        <hover-link
-          label="VLOGS + INTERVIEWS"
-          assetUrl="https://res.cloudinary.com/dmwfd0zhh/image/upload/q_auto,f_auto/v1620697813/Korty/image_2_gijibv.jpg"
-          href="/"
-        >
-          VL<span>O</span>GS + INTERVIEWS
-        </hover-link>
+        <div>
+          <hover-link
+            label="VLOGS + INTERVIEWS"
+            assetUrl="https://res.cloudinary.com/dmwfd0zhh/image/upload/q_auto,f_auto/v1620697813/Korty/image_2_gijibv.jpg"
+            href="/"
+          >
+            <sup class="c-hoverlink__super">02</sup>
+            VIDE<span>O</span> MASHUPS
+          </hover-link>
+        </div>
+        <p>
+          these mostly go on instagram to her 23k plus audience. 🔥 edits, we
+          highly recommend.
+        </p>
+      </div>
+      <div class="c-hoverlink hover-link-3">
+        <div class="image-details">
+          <p>
+            She has walked for top fashion houses accross West Africa
+          </p>
+          <div class="c-image">
+            <img
+              src="https://res.cloudinary.com/dmwfd0zhh/image/upload/q_auto,f_auto/v1620865175/Korty/Rectangle_11_tuj1nt.jpg"
+              alt=""
+            />
+          </div>
+        </div>
+        <div>
+          <hover-link
+            label="VLOGS + INTERVIEWS"
+            assetUrl="https://res.cloudinary.com/dmwfd0zhh/image/upload/q_auto,f_auto/v1620697813/Korty/image_2_gijibv.jpg"
+            href="/"
+          >
+            <sup class="c-hoverlink__super">03</sup>
+            M<span>O</span>DELLING
+          </hover-link>
+        </div>
       </div>
       <nuxt-link class="c-circular-link" to="/profile">
         <circular-link>
