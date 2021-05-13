@@ -9,7 +9,6 @@
     <div class="tall">
       <h1>Korty</h1>
       <p>Website coming up</p>
-      <nuxt-link to="/about">about</nuxt-link>
     </div>
   </LocomotiveScroll>
 </template>
