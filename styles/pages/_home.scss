@@ -1,4 +1,26 @@
 .c-landing {
+  .credits-link {
+    width: 90px;
+    height: 90px;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    position: relative;
+    z-index: 5;
+    display: inline-block;
+    grid-row-start: 10;
+    border-radius: 50%;
+    position: relative;
+    margin-top: calc(100 / 12 * 1px);
+    // transform: translateY(15%);
+    @include flex(center, center);
+    @include paragraph;
+    text-transform: uppercase;
+    border: 1px solid #abb1ba;
+    background: transparent;
+    outline: none;
+    letter-spacing: -0.5px;
+  }
+
   .desktop-landing {
     padding: 48px 52px;
     display: none;
@@ -13,14 +35,13 @@
   }
 
   .mobile-landing {
-    padding: 24px;
-    height: 400vh;
     @include media(">tablet") {
       display: none;
     }
 
     .c-landing__header {
       margin-bottom: 64px;
+      padding: 24px;
     }
   }
   &__header {
@@ -68,28 +89,6 @@
           background-position: 50% 50%;
           background-size: cover;
         }
-      }
-
-      .credits-link {
-        width: 90px;
-        height: 90px;
-        grid-column-start: 1;
-        grid-column-end: 2;
-        position: relative;
-        z-index: 5;
-        display: inline-block;
-        grid-row-start: 10;
-        border-radius: 50%;
-        position: relative;
-        margin-top: calc(100 / 12 * 1px);
-        // transform: translateY(15%);
-        @include flex(center, center);
-        @include paragraph;
-        text-transform: uppercase;
-        border: 1px solid #abb1ba;
-        background: transparent;
-        outline: none;
-        letter-spacing: -0.5px;
       }
 
       .c-name {
@@ -148,6 +147,7 @@
           @include paragraph;
           max-width: 210px;
           width: 100%;
+          line-height: 1.1;
         }
 
         @include media(">1200px") {
@@ -220,5 +220,140 @@
   }
 
   &__mobile {
+    .c-intro {
+      padding: 0 24px;
+      @include flex(space-between);
+      margin-bottom: 20px;
+      &__details {
+        width: 100%;
+        max-width: 50%;
+
+        @include media(">phone") {
+          max-width: 43%;
+        }
+        .details-title {
+          @include heading-3;
+          margin-bottom: 12px;
+        }
+
+        .details-jd {
+          @include paragraph;
+          line-height: 1;
+        }
+      }
+      &__image {
+        max-width: 40%;
+        margin-right: 20px;
+
+        @include media(">phone") {
+          max-width: 45%;
+        }
+
+        img {
+          border-radius: 50%;
+        }
+      }
+    }
+
+    .c-jobs {
+      .c-desc {
+        padding-right: 24px;
+        margin-top: auto;
+        transform: translateY(-80%);
+        margin-bottom: -10px;
+        width: 100%;
+        margin-left: auto;
+        max-width: 50%;
+        @include paragraph;
+
+        @include media(">phone") {
+          max-width: 43%;
+        }
+
+        p {
+          max-width: 230px;
+        }
+      }
+      .c-job {
+        margin-bottom: 32px;
+        &__title {
+          @include heading-1;
+          padding: 0 24px;
+          margin-bottom: 32px;
+          width: 100%;
+
+          &.max {
+            max-width: 412px;
+          }
+
+          .bottom-text {
+            max-width: 247px;
+            margin-left: auto;
+            display: inline-block;
+          }
+
+          .title-desc {
+            @include paragraph;
+            max-width: 330px;
+            margin-top: 16px;
+            pointer-events: none;
+            p {
+              max-width: 200px;
+              text-align: left;
+            }
+          }
+
+          &.align-right,
+          .align-right {
+            text-align: right;
+            display: block;
+          }
+        }
+
+        &__video {
+          width: 100%;
+          height: 285px;
+
+          video {
+            width: 100%;
+            height: 100%;
+          }
+        }
+
+        &__desc {
+          padding: 0 24px;
+          @include flex(space-between);
+          .desc-image {
+            max-width: 45%;
+            width: 100%;
+
+            @include media(">phone") {
+              max-width: 43%;
+            }
+          }
+
+          .desc-text {
+            max-width: 46%;
+            width: 100%;
+            @include paragraph;
+
+            p {
+              max-width: 200px;
+            }
+          }
+        }
+      }
+    }
+
+    .c-circular-link {
+      margin: 0 auto;
+      max-width: 350px;
+      width: 100%;
+      display: block;
+    }
+
+    .c-credits {
+      padding: 0 24px;
+    }
   }
 }

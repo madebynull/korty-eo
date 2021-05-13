@@ -1,5 +1,4 @@
 <template>
-  <!-- <div> -->
   <a :href="href" ref="hoverLink" class="menu__item">
     <span class="menu__item-label">
       <slot />
@@ -13,11 +12,10 @@
           preload="auto"
           muted
           loop
-        ></video>
+        />
       </div>
     </div>
   </a>
-  <!-- </div> -->
 </template>
 
 <script>
