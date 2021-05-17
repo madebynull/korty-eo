@@ -206,19 +206,30 @@
   }
 
   &__editorial {
-    padding-top: 100px;
-    padding-bottom: 100px;
+    padding-top: 0;
+    padding-bottom: 50px;
+
+    @include media(">tablet") {
+      padding-top: 100px;
+      padding-bottom: 100px;
+    }
 
     .editorial {
       &__image {
-        height: 540px;
+        height: 300px;
         width: 100%;
-        background: url("https://res.cloudinary.com/dmwfd0zhh/image/upload/q_auto,f_auto/v1621235815/Korty/image_33_foxwjy.jpg");
+        background: url("https://res.cloudinary.com/dmwfd0zhh/image/upload/q_auto,f_auto/v1621239276/Korty/image_33_1_pmbu2v.jpg");
         background-size: cover;
-        background-position: 50% 50%;
+        background-position: 80% 20%;
+
+        @include media(">phone") {
+          height: 400px;
+        }
 
         @include media(">tablet") {
           padding: 36px 220px;
+          height: 540px;
+          background-position: 50% 20%;
           @include flex(flex-end, flex-end);
         }
 

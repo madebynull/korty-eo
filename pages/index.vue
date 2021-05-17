@@ -21,7 +21,7 @@ export default {
         "https://res.cloudinary.com/dmwfd0zhh/image/upload/q_auto,f_auto/v1620697813/Korty/image_2_gijibv.jpg",
         "https://res.cloudinary.com/dmwfd0zhh/image/upload/v1620697813/Korty/image_20_bufuoi.jpg",
         "https://res.cloudinary.com/dmwfd0zhh/image/upload/q_auto,f_auto/v1620865175/Korty/Rectangle_11_tuj1nt.jpg",
-        "https://res.cloudinary.com/dmwfd0zhh/image/upload/q_auto,f_auto/v1621235815/Korty/image_33_foxwjy.jpg"
+        "https://res.cloudinary.com/dmwfd0zhh/image/upload/q_auto,f_auto/v1621239276/Korty/image_33_1_pmbu2v.jpg"
       ],
       percentageLoaded: 0,
       isLoaded: false
