@@ -31,9 +31,7 @@
   font-weight: 400;
   line-height: 1;
 
-  @include media(">phone") {
-    font-size: 15px;
-  }
+  font-size: 15px;
 }
 
 @mixin paragraph {
