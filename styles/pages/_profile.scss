@@ -1,12 +1,236 @@
+@mixin padding {
+  padding: 0 24px;
+
+  @include media(">tablet") {
+    padding: 0 48px;
+  }
+}
+
+@mixin caption {
+  @include paragraph;
+  display: none;
+
+  @include media(">tablet") {
+    display: block;
+  }
+
+  span {
+    color: $col-gray;
+  }
+}
+
 .c-profile {
-  padding: 48px 52px;
   min-height: 100vh;
+  padding-top: 24px;
+  padding-bottom: 24px;
+
+  @include media(">tablet") {
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
 
   &__header {
     @include flex(space-between, center);
     @include paragraph;
+    @include padding;
     font-weight: 500;
     text-transform: uppercase;
+    margin-bottom: 56px;
+    position: relative;
+    z-index: 2;
+
+    @include media(">tablet") {
+      margin-bottom: 24px;
+    }
+  }
+
+  &__hero {
+    width: 100%;
+    display: grid;
+    height: 82vh;
+    @include media(">tablet") {
+      @include padding;
+    }
+
+    .hero__image {
+      overflow: hidden;
+    }
+
     margin-bottom: 70px;
+    > div {
+      grid-area: 1/1;
+      width: 100%;
+      height: 82vh;
+
+      img {
+        height: 100%;
+        // height: 80vh;
+        object-fit: cover;
+        object-position: 50% 34%;
+      }
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+
+      &__title {
+        text-transform: uppercase;
+        @include heading-2;
+        // line-height: 0;
+        text-align: center;
+        transform: translateY(-50%);
+      }
+
+      &__caption {
+        display: none;
+        p {
+          @include paragraph;
+          line-height: 1.7;
+          &:not(:first-of-type) {
+            color: $col-gray;
+          }
+        }
+
+        @include media(">tablet") {
+          display: block;
+          position: absolute;
+          bottom: 36px;
+          left: 113px;
+        }
+      }
+    }
+  }
+
+  &__headline {
+    margin-bottom: 40px;
+    overflow: hidden;
+
+    @include media(">phone") {
+      margin-bottom: 80px;
+    }
+
+    .headline__text {
+      @include heading-1;
+      line-height: 1.2;
+      white-space: nowrap;
+      text-align: center;
+      display: flex;
+      // justify-content: space-between;
+      width: 300%;
+
+      @include media(">phone") {
+        width: 200%;
+      }
+
+      .fraunces {
+        font-style: italic;
+      }
+
+      > span {
+        &:not(:last-of-type) {
+          margin-right: 30px;
+          display: inline-block;
+        }
+      }
+    }
+  }
+
+  &__intro {
+    max-width: 1250px;
+    margin: 0 auto;
+    @include padding;
+    margin-bottom: 100px;
+
+    @include media(">tablet") {
+      @include flex(space-between);
+      padding: 0 60px;
+    }
+
+    .intro {
+      &__image {
+        width: 100%;
+
+        img {
+          height: 100%;
+        }
+
+        @include media(">tablet") {
+          max-width: 550px;
+          max-height: 550px;
+          margin-right: 40px;
+        }
+
+        .c-caption {
+          @include caption;
+          margin-top: 24px;
+        }
+      }
+
+      &__text {
+        width: 100%;
+        @include media(">tablet") {
+          max-width: 460px;
+        }
+
+        .inner {
+          @include media(">tablet") {
+            max-width: 340px;
+          }
+        }
+        h2 {
+          @include heading-3;
+          max-width: 400px;
+          margin-top: 16px;
+          margin-bottom: 24px;
+
+          @include media(">tablet") {
+            margin-bottom: 40px;
+            margin-top: 0;
+            max-width: 300px;
+          }
+        }
+        p {
+          @include paragraph;
+          color: $col-gray;
+        }
+
+        .para-1 {
+          margin-bottom: 24px;
+          @include media(">tablet") {
+            margin-bottom: 90px;
+          }
+        }
+      }
+    }
+  }
+
+  &__editorial {
+    padding-top: 100px;
+    padding-bottom: 100px;
+
+    .editorial {
+      &__image {
+        height: 540px;
+        width: 100%;
+        background: url("https://res.cloudinary.com/dmwfd0zhh/image/upload/q_auto,f_auto/v1621235815/Korty/image_33_foxwjy.jpg");
+        background-size: cover;
+        background-position: 50% 50%;
+
+        @include media(">tablet") {
+          padding: 36px 220px;
+          @include flex(flex-end, flex-end);
+        }
+
+        .c-caption {
+          color: #f7f5f5;
+          @include caption;
+
+          span {
+            color: #f7f5f5;
+          }
+        }
+      }
+    }
   }
 }

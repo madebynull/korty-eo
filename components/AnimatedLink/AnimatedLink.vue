@@ -44,8 +44,8 @@ button {
     transition: transform 0.3s ease-out;
 
     > span {
-      /* display: flex; */
       /* white-space: nowrap; */
+      margin-right: 2px;
     }
   }
 

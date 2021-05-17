@@ -22,4 +22,12 @@ const getMousePos = e => {
   return { x: posx, y: posy };
 };
 
-export { map, lerp, clamp, getMousePos };
+const preloadImage = src =>
+  new Promise(r => {
+    const image = new Image();
+    image.onload = r;
+    image.onerror = r;
+    image.src = src;
+  });
+
+export { map, lerp, clamp, getMousePos, preloadImage };
