@@ -21,10 +21,14 @@
 }
 
 @mixin heading-3 {
-  font-size: 36px;
+  font-size: 32px;
   font-weight: 500;
   line-height: 100%;
   letter-spacing: -2px;
+
+  @include media(">tablet") {
+    font-size: 36px;
+  }
 }
 
 @mixin title-small {

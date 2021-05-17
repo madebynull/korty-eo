@@ -92,8 +92,51 @@
             Korty EO. & TG OMORI &nbsp; <span>April 10, 2021</span>
           </p>
         </div>
-        <div class="editorial__"></div>
+        <div class="editorial__content first">
+          <div class="left">
+            <h2>
+              “The inspiration behind my art is life itself. I like to take
+              pictures as a hobby because I’m fascinated by nature and
+              travelling. Converting these pictures into art is like breathing
+              life into something. The thought of this alone encourages me.”
+            </h2>
+            <p class="c-caption">
+              – Korty EO. &nbsp; <span>March 16, 2018</span>
+            </p>
+          </div>
+          <div class="right">
+            <p>
+              Korty left her family home in Ibadan for Lagos after getting an
+              offer to become a writer at a newly formed media company, Zikoko.
+              Work was going well, until she got bored and literally said “fuck
+              shit, I wants to make videos”. She is mostly self taught, it
+              definitely didn’t hurt to have unlimited access to the internet.
+              She had a little more creative freedom when she finally left for
+              her own apartment after living with relatives for a year.
+            </p>
+          </div>
+        </div>
+        <div class="editorial__content second">
+          <div class="left">
+            <p>
+              She later joined Empawa Africa, (a digital company to support new
+              and upcoming african artistes) in January 2020 as a content lead
+              where she had creative freedom on a couple of projects. She soon
+              left to pursue a freelance filmmaking career and started a youtube
+              channel document her life.
+            </p>
+          </div>
+          <div class="right">
+            <div class="image">
+              <img
+                src="https://res.cloudinary.com/dmwfd0zhh/image/upload/q_auto,f_auto/v1621285427/Korty/Rectangle_17_ve1u5y.jpg"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
       </div>
+      <div class="c-profile__work"></div>
       <div class="c-profile__"></div>
     </div>
   </LocomotiveScroll>
@@ -143,11 +186,11 @@ export default {
           trigger: ".c-profile__headline",
           scroller: this.$refs.scroller.locomotive.el,
           scrub: true,
-          start: "top 95%",
+          start: "top 90%",
           end: "bottom 10%"
+          // markers: true
         },
         xPercent: -50
-        // ease: "none"
       });
     },
     heroImageAnimation() {

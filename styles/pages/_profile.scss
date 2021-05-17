@@ -242,6 +242,92 @@
           }
         }
       }
+
+      &__content {
+        max-width: 1250px;
+        margin: 0 auto;
+        @include padding;
+
+        @include media(">tablet") {
+          @include flex(space-between);
+          padding: 0 60px;
+        }
+
+        p {
+          @include paragraph;
+          color: $col-gray;
+        }
+
+        .left {
+          @include media(">tablet") {
+            max-width: 640px;
+            width: 100%;
+            margin-right: 50px;
+            flex-shrink: 0.7;
+          }
+          h2 {
+            @include heading-3;
+          }
+        }
+
+        .right {
+          @include media(">tablet") {
+            max-width: 345px;
+            width: 100%;
+          }
+        }
+
+        &.first {
+          margin-top: 50px;
+          margin-bottom: 48px;
+          @include media(">tablet") {
+            margin-top: 120px;
+            margin-bottom: 120px;
+          }
+
+          .left {
+            margin-bottom: 48px;
+            @include media(">tablet") {
+              max-width: 640px;
+              width: 100%;
+              margin-right: 50px;
+              flex-shrink: 0.7;
+              margin-bottom: 0;
+            }
+          }
+
+          .c-caption {
+            @include caption;
+            display: block;
+            margin-top: 20px;
+          }
+        }
+
+        &.second {
+          .left {
+            margin-bottom: 48px;
+            p {
+              @include media(">tablet") {
+                max-width: 345px;
+                margin-left: auto;
+                margin-bottom: 0;
+              }
+            }
+          }
+
+          .right {
+            .image {
+              max-width: 120px;
+              max-height: 120px;
+              margin-left: auto;
+
+              @include media(">tablet") {
+                margin-left: unset;
+              }
+            }
+          }
+        }
+      }
     }
   }
 }
