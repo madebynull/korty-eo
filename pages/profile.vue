@@ -136,7 +136,17 @@
           </div>
         </div>
       </div>
-      <div class="c-profile__work"></div>
+
+      <div class="c-profile__work">
+        <div class="c-profile__work--desktop" ref="works">
+          <div class="sect-1"></div>
+          <div class="sect-2"></div>
+          <div class="sect-3">
+            <h1 data-scroll data-scroll-id="hey">end</h1>
+          </div>
+        </div>
+        <div class="c-profile__work--mobile show-mobile"></div>
+      </div>
       <div class="c-profile__"></div>
     </div>
   </LocomotiveScroll>
@@ -151,24 +161,39 @@ gsap.registerPlugin(ScrollTrigger);
 export default {
   components: { AnimatedLink },
   mounted() {
+    const worksRef = this.$refs.works;
+
     this.initScrolltrigger();
     this.marqueeAnimation();
     this.heroImageAnimation();
-    // const locomotive = this.$refs.scroller.locomotive;
-    // locomotive.on("scroll", e => {
-    //   console.log(e);
-    // });
+    this.worksAnimation(worksRef);
+    const locomotive = this.$refs.scroller.locomotive;
+    locomotive.on("scroll", e => {
+      if (typeof e.currentElements["hey"] === "object") {
+        let progress = e.currentElements["hey"].progress;
+        // console.log(progress);
+        // ouput log example: 0.34
+        // gsap example : myGsapAnimation.progress(progress);
+      }
+    });
   },
   methods: {
     initScrolltrigger() {
       const locomotive = this.$refs.scroller.locomotive;
       locomotive.on("scroll", ScrollTrigger.update);
+
       ScrollTrigger.scrollerProxy(locomotive.el, {
         scrollTop(value) {
           return arguments.length
             ? locomotive.scrollTo(value, 0, 0)
             : locomotive.scroll.instance.scroll.y;
         },
+        scrollLeft(value) {
+          return arguments.length
+            ? locoScroll.scrollTo(value, 0, 0)
+            : locoScroll.scroll.instance.scroll.x;
+        },
+
         getBoundingClientRect() {
           return {
             top: 0,
@@ -216,6 +241,34 @@ export default {
         y: 20
         // ease: "none"
       });
+    },
+    worksAnimation(container) {
+      let clamp = gsap.utils.clamp(-20, 20);
+      gsap.to(container, {
+        x: () => {
+          return -(container.scrollWidth - window.innerWidth);
+        },
+        ease: "none",
+        scrollTrigger: {
+          trigger: container,
+          invalidateOnRefresh: true,
+          scroller: this.$refs.scroller.locomotive.el,
+          pin: true,
+          scrub: 1,
+          start: "top top",
+          onUpdate: self => {
+            let skew = clamp(self.getVelocity() / -300);
+          },
+          end: () => "+=" + container.offsetWidth,
+          markers: true
+        }
+      });
+
+      ScrollTrigger.addEventListener("refresh", () => {
+        this.$nuxt.$emit("update-locomotive");
+      });
+
+      ScrollTrigger.refresh();
     }
   }
 };

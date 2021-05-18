@@ -22,11 +22,9 @@
 .c-profile {
   min-height: 100vh;
   padding-top: 24px;
-  padding-bottom: 24px;
 
   @include media(">tablet") {
     padding-top: 48px;
-    padding-bottom: 48px;
   }
 
   &__header {
@@ -327,6 +325,45 @@
             }
           }
         }
+      }
+    }
+  }
+  &__work {
+    &--desktop {
+      display: none;
+
+      @include media(">tablet") {
+        display: flex;
+        height: 100%;
+        width: 100%;
+        // flex-direction: column;
+        flex-wrap: nowrap;
+
+        > div {
+          flex: 0 0 auto;
+          height: 100%;
+          // display: flex;
+          height: 100vh;
+
+          h1 {
+            @include heading-1;
+          }
+        }
+      }
+
+      .sect-1 {
+        width: 100vw;
+      }
+
+      .sect-2 {
+        width: 500px;
+      }
+
+      .sect-3 {
+        width: 100vw;
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
       }
     }
   }
