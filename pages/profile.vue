@@ -212,9 +212,38 @@
               </div>
             </div>
 
-            <div class="empawa"></div>
+            <div class="empawa">
+              <div class="empawa__image">
+                <img
+                  src="https://res.cloudinary.com/dmwfd0zhh/image/upload/q_auto,f_auto/v1621443387/Korty/Rectangle_22_zkazsw.jpg"
+                  alt=""
+                />
+              </div>
+              <div class="empawa__desc">
+                <p>
+                  Worked as a content lead at Empawa Africa, single handedly
+                  directing and producing shows.
+                </p>
+                <a href="/" target="_blank">
+                  <arrow />
+                </a>
+              </div>
+              <h1>EMPAWA</h1>
+            </div>
+
+            <div class="zikoko-ga">
+              <div class="googlearts">
+                <h3>GOOGLE ARTS <br />& CULTURE</h3>
+                <p>
+                  Worked on production for a documentary on music for Google
+                  Arts and Culture.
+                </p>
+              </div>
+            </div>
           </div>
-          <div class="work__quote"></div>
+          <div class="work__quote">
+            <h1>End of Page</h1>
+          </div>
         </div>
         <div class="c-profile__work--mobile show-mobile"></div>
       </div>
@@ -228,6 +257,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import AnimatedLink from "../components/AnimatedLink/AnimatedLink.vue";
 import Arrow from "../components/Arrow.vue";
+import { snap } from "gsap/all";
 gsap.registerPlugin(ScrollTrigger);
 
 export default {
@@ -316,11 +346,14 @@ export default {
       });
     },
     worksAnimation(container) {
+      let isScrollForward = true;
+
       let clamp = gsap.utils.clamp(-20, 20);
-      gsap.to(container, {
+      const anim = gsap.to(container, {
         x: () => {
           return -(container.scrollWidth - window.innerWidth);
         },
+        delay: 10,
         ease: "none",
         scrollTrigger: {
           trigger: container,
@@ -331,11 +364,40 @@ export default {
           start: "top top",
           onUpdate: self => {
             let skew = clamp(self.getVelocity() / -300);
+            const direction = self.direction;
+
+            const snapDifference =
+              self.progress * self.end - (self.end - window.innerWidth);
+
+            if (isScrollForward) {
+              if (snapDifference > window.innerWidth * 0.2) {
+                self.scroll(self.end);
+                isScrollForward = false;
+              }
+            }
+
+            if (
+              direction === -1 &&
+              snapDifference > window.innerWidth * 0.3 &&
+              snapDifference < window.innerWidth * 0.9
+            ) {
+              const snapProgress =
+                window.innerWidth / (container.scrollWidth - window.innerWidth);
+              const differenceEndStart = self.end - self.start;
+              const snapDeduction = snapProgress * differenceEndStart;
+
+              self.scroll(self.end - (snapDeduction + 2));
+
+              setTimeout(() => {
+                isScrollForward = true;
+              }, 1000);
+            }
           },
-          end: () => "+=" + container.offsetWidth,
-          markers: true
+          end: () => "+=" + container.offsetWidth
+          // markers: true
         }
       });
+      // console.log(anim.);
 
       ScrollTrigger.addEventListener("refresh", () => {
         this.$nuxt.$emit("update-locomotive");

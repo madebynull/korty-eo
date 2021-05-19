@@ -26,7 +26,8 @@ export default {
         "https://res.cloudinary.com/dmwfd0zhh/image/upload/q_auto,f_auto/v1621360631/Korty/155970126_722279075123050_2581246909765747927_n_1_ieppbb.jpg",
         "https://res.cloudinary.com/dmwfd0zhh/image/upload/q_auto,f_auto/v1621406261/Korty/Rectangle_19_o44i0q.jpg",
         "https://res.cloudinary.com/dmwfd0zhh/image/upload/q_auto,f_auto/v1621406261/Korty/Rectangle_20_hkfszk.jpg",
-        "https://res.cloudinary.com/dmwfd0zhh/image/upload/q_auto,f_auto/v1621406260/Korty/Rectangle_21_itahct.jpg"
+        "https://res.cloudinary.com/dmwfd0zhh/image/upload/q_auto,f_auto/v1621406260/Korty/Rectangle_21_itahct.jpg",
+        "https://res.cloudinary.com/dmwfd0zhh/image/upload/q_auto,f_auto/v1621443387/Korty/Rectangle_22_zkazsw.jpg"
       ],
       percentageLoaded: 0,
       isLoaded: false
