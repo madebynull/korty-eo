@@ -177,6 +177,7 @@
                     <img
                       src="https://res.cloudinary.com/dmwfd0zhh/image/upload/q_auto,f_auto/v1621406261/Korty/Rectangle_19_o44i0q.jpg"
                       alt="air max 200's"
+                      class="skewElem"
                     />
                   </div>
                   <a href="/" target="_blank">
@@ -188,6 +189,7 @@
                     <img
                       src="https://res.cloudinary.com/dmwfd0zhh/image/upload/q_auto,f_auto/v1621406261/Korty/Rectangle_20_hkfszk.jpg"
                       alt="air max 200's"
+                      class="skewElem"
                     />
                   </div>
                   <p>
@@ -216,7 +218,8 @@
               <div class="empawa__image">
                 <img
                   src="https://res.cloudinary.com/dmwfd0zhh/image/upload/q_auto,f_auto/v1621443387/Korty/Rectangle_22_zkazsw.jpg"
-                  alt=""
+                  alt="Oxlade at Empawa"
+                  class="skewElem"
                 />
               </div>
               <div class="empawa__desc">
@@ -347,9 +350,13 @@ export default {
     },
     worksAnimation(container) {
       let isScrollForward = true;
+      const proxy = { skew: 0, bounce: 1 },
+        skewSetter = gsap.quickSetter(".skewElem", "skewX", "deg"),
+        // scaleSetter = gsap.quickSetter(".scaleEl", "scaleY"),
+        clamp = gsap.utils.clamp(-30, 30),
+        scaleClamp = gsap.utils.clamp(0.95, 1.1);
 
-      let clamp = gsap.utils.clamp(-20, 20);
-      const anim = gsap.to(container, {
+      gsap.to(container, {
         x: () => {
           return -(container.scrollWidth - window.innerWidth);
         },
@@ -362,7 +369,11 @@ export default {
           scrub: 1,
           start: "top top",
           onUpdate: self => {
-            let skew = clamp(self.getVelocity() / -300);
+            let skew = clamp(self.getVelocity() / -100);
+            // const bounce = scaleClamp(
+            //   1 - Math.abs((self.getVelocity() / -300) * 0.25)
+            // );
+
             const direction = self.direction;
 
             const snapDifference =
@@ -391,12 +402,30 @@ export default {
                 isScrollForward = true;
               }, 1000);
             }
+
+            if (Math.abs(skew) > Math.abs(proxy.skew)) {
+              proxy.skew = skew;
+              // proxy.bounce = bounce;
+              gsap.to(proxy, {
+                skew: 0,
+                scaleY: 0,
+                duration: 0.7,
+                ease: "power3",
+                overwrite: true,
+                onUpdate: () => {
+                  skewSetter(proxy.skew);
+                  // scaleSetter(proxy.bounce);
+                }
+              });
+            }
           },
           end: () => "+=" + container.offsetWidth
           // markers: true
         }
       });
       // console.log(anim.);
+
+      gsap.set(".skewElem", { transformOrigin: "right center", force3D: true });
 
       ScrollTrigger.addEventListener("refresh", () => {
         this.$nuxt.$emit("update-locomotive");
