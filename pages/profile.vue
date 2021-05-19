@@ -369,7 +369,7 @@ export default {
           scrub: 1,
           start: "top top",
           onUpdate: self => {
-            let skew = clamp(self.getVelocity() / -200);
+            let skew = clamp(self.getVelocity() / -230);
             // const bounce = scaleClamp(
             //   1 - Math.abs((self.getVelocity() / -300) * 0.25)
             // );
