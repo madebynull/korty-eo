@@ -139,11 +139,82 @@
 
       <div class="c-profile__work">
         <div class="c-profile__work--desktop" ref="works">
-          <div class="sect-1"></div>
-          <div class="sect-2"></div>
-          <div class="sect-3">
-            <h1 data-scroll data-scroll-id="hey">end</h1>
+          <div class="work__intro">
+            <div class="inner">
+              <div class="image-con">
+                <div class="intro__image">
+                  <img
+                    src="https://res.cloudinary.com/dmwfd0zhh/image/upload/q_auto,f_auto/v1621360631/Korty/155970126_722279075123050_2581246909765747927_n_1_ieppbb.jpg"
+                    alt=""
+                  />
+                </div>
+                <p class="c-caption">
+                  Korty EO. &nbsp;
+                  <span>March 23, 2021 &nbsp; by @umithedolphin</span>
+                </p>
+              </div>
+
+              <div class="intro__desc">
+                <h1>W<span class="fraunces">O</span>RK</h1>
+                <p class="first-para">
+                  Korty Eniola has worked accross fashion, entertainment and
+                  media industries as a writer, editor, visual desiger, model,
+                  content producer and now filmmaker.
+                </p>
+                <div class="intro__cta">
+                  <arrow />
+                  <p>Here are some featured projects, Keep scrolling to see.</p>
+                </div>
+              </div>
+            </div>
           </div>
+          <div class="work__companies">
+            <div class="nike-gt">
+              <div class="nike">
+                <div class="nike__left">
+                  <h2>NIKE</h2>
+                  <div class="nike__image1">
+                    <img
+                      src="https://res.cloudinary.com/dmwfd0zhh/image/upload/q_auto,f_auto/v1621406261/Korty/Rectangle_19_o44i0q.jpg"
+                      alt="air max 200's"
+                    />
+                  </div>
+                  <a href="/" target="_blank">
+                    <arrow />
+                  </a>
+                </div>
+                <div class="nike__right">
+                  <div class="nike__image2">
+                    <img
+                      src="https://res.cloudinary.com/dmwfd0zhh/image/upload/q_auto,f_auto/v1621406261/Korty/Rectangle_20_hkfszk.jpg"
+                      alt="air max 200's"
+                    />
+                  </div>
+                  <p>
+                    Collaboration with Peter Johnson for his custom Air Max 200s
+                    “Balance Diet”.
+                  </p>
+                </div>
+              </div>
+              <div class="gt">
+                <div>
+                  <div class="gt__image">
+                    <img
+                      src="https://res.cloudinary.com/dmwfd0zhh/image/upload/q_auto,f_auto/v1621406260/Korty/Rectangle_21_itahct.jpg"
+                      alt="GTBank logo"
+                    />
+                  </div>
+                  <div class="gt__desc">
+                    <h3>GTBANK</h3>
+                    <p>Winning project pitch video for GTBank headquarters</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="empawa"></div>
+          </div>
+          <div class="work__quote"></div>
         </div>
         <div class="c-profile__work--mobile show-mobile"></div>
       </div>
@@ -156,10 +227,11 @@
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import AnimatedLink from "../components/AnimatedLink/AnimatedLink.vue";
+import Arrow from "../components/Arrow.vue";
 gsap.registerPlugin(ScrollTrigger);
 
 export default {
-  components: { AnimatedLink },
+  components: { AnimatedLink, Arrow },
   mounted() {
     const worksRef = this.$refs.works;
 
@@ -167,6 +239,7 @@ export default {
     this.marqueeAnimation();
     this.heroImageAnimation();
     this.worksAnimation(worksRef);
+
     const locomotive = this.$refs.scroller.locomotive;
     locomotive.on("scroll", e => {
       if (typeof e.currentElements["hey"] === "object") {

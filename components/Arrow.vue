@@ -1,0 +1,21 @@
+<template>
+  <svg viewBox="0 0 96 96" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="48" cy="48" r="47.5" stroke="#ABB1BA" />
+    <path
+      d="M52.172 46.9999L46.808 41.6359L48.222 40.2219L56 47.9999L48.222 55.7779L46.808 54.3639L52.172 48.9999H40V46.9999H52.172Z"
+      fill="#121821"
+      class="c-arrow"
+    />
+  </svg>
+</template>
+
+<style lang="scss" scoped>
+svg {
+  max-width: 72px;
+  width: 100%;
+
+  path {
+    transform-origin: center;
+  }
+}
+</style>

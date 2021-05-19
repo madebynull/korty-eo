@@ -22,7 +22,11 @@ export default {
         "https://res.cloudinary.com/dmwfd0zhh/image/upload/v1620697813/Korty/image_20_bufuoi.jpg",
         "https://res.cloudinary.com/dmwfd0zhh/image/upload/q_auto,f_auto/v1620865175/Korty/Rectangle_11_tuj1nt.jpg",
         "https://res.cloudinary.com/dmwfd0zhh/image/upload/q_auto,f_auto/v1621239276/Korty/image_33_1_pmbu2v.jpg",
-        "https://res.cloudinary.com/dmwfd0zhh/image/upload/q_auto,f_auto/v1621285427/Korty/Rectangle_17_ve1u5y.jpg"
+        "https://res.cloudinary.com/dmwfd0zhh/image/upload/q_auto,f_auto/v1621285427/Korty/Rectangle_17_ve1u5y.jpg",
+        "https://res.cloudinary.com/dmwfd0zhh/image/upload/q_auto,f_auto/v1621360631/Korty/155970126_722279075123050_2581246909765747927_n_1_ieppbb.jpg",
+        "https://res.cloudinary.com/dmwfd0zhh/image/upload/q_auto,f_auto/v1621406261/Korty/Rectangle_19_o44i0q.jpg",
+        "https://res.cloudinary.com/dmwfd0zhh/image/upload/q_auto,f_auto/v1621406261/Korty/Rectangle_20_hkfszk.jpg",
+        "https://res.cloudinary.com/dmwfd0zhh/image/upload/q_auto,f_auto/v1621406260/Korty/Rectangle_21_itahct.jpg"
       ],
       percentageLoaded: 0,
       isLoaded: false

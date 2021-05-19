@@ -22,6 +22,7 @@
 .c-profile {
   min-height: 100vh;
   padding-top: 24px;
+  overflow: hidden !important;
 
   @include media(">tablet") {
     padding-top: 48px;
@@ -155,7 +156,7 @@
 
         @include media(">tablet") {
           max-width: 550px;
-          max-height: 550px;
+          height: 550px;
           margin-right: 40px;
         }
 
@@ -342,8 +343,8 @@
         > div {
           flex: 0 0 auto;
           height: 100%;
-          // display: flex;
           height: 100vh;
+          @include flex($align: center);
 
           h1 {
             @include heading-1;
@@ -351,19 +352,154 @@
         }
       }
 
-      .sect-1 {
-        width: 100vw;
-      }
+      .work {
+        &__intro {
+          width: 100vw;
 
-      .sect-2 {
-        width: 500px;
-      }
+          .inner {
+            @include flex(space-between);
+            margin: 0 auto;
+            width: 100%;
+            max-width: max(900px, 78%);
 
-      .sect-3 {
-        width: 100vw;
-        display: flex;
-        justify-content: flex-end;
-        align-items: flex-end;
+            .image-con {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              .c-caption {
+                margin-top: 48px;
+                @include caption;
+              }
+            }
+
+            .intro {
+              &__image {
+                width: 450px;
+                height: 450px;
+
+                img {
+                  border-radius: 50%;
+                  height: 100%;
+                  object-fit: cover;
+                }
+              }
+
+              &__desc {
+                margin-top: 50px;
+                h1 {
+                  @include heading-1;
+                  margin-bottom: 64px;
+                }
+
+                .first-para {
+                  @include paragraph;
+                  color: $col-gray;
+                  max-width: 225px;
+                  margin-left: auto;
+                  margin-bottom: 70px;
+                }
+              }
+
+              &__cta {
+                @include flex($align: center);
+                max-width: 314px;
+                width: 100%;
+                margin-left: auto;
+
+                p {
+                  max-width: 226px;
+                  margin-left: 18px;
+                  width: 100%;
+                  color: $col-gray;
+
+                  @include paragraph;
+                }
+              }
+            }
+          }
+        }
+
+        &__companies {
+          min-width: 100vw;
+          width: 100%;
+          margin-left: 400px;
+          margin-right: 400px;
+          p {
+            @include paragraph;
+            color: $col-gray;
+          }
+
+          .nike-gt {
+            max-width: 695px;
+            width: 100%;
+
+            .nike {
+              display: flex;
+              margin-bottom: 70px;
+
+              &__left {
+                margin-right: 40px;
+              }
+
+              h2 {
+                @include heading-2;
+                margin-bottom: 28px;
+              }
+
+              &__image1 {
+                max-width: 120px;
+                width: 100%;
+                margin-left: auto;
+                margin-bottom: 28px;
+              }
+
+              &__image2 {
+                max-width: 300px;
+                width: 100%;
+                margin-bottom: 28px;
+              }
+              p {
+                max-width: 150px;
+                width: 100%;
+                line-height: 1;
+              }
+
+              svg {
+                margin-left: auto;
+                path {
+                  transform: rotate(-45deg);
+                }
+              }
+            }
+
+            .gt {
+              display: flex;
+              justify-content: flex-end;
+              > div {
+                margin-left: auto;
+                display: flex;
+              }
+
+              &__image {
+                margin-right: 24px;
+                width: 72px;
+                height: 72px;
+              }
+
+              &__desc {
+                max-width: 150px;
+                h3 {
+                  @include heading-3;
+                  margin-bottom: 12px;
+                }
+
+                p {
+                  line-height: 1;
+                }
+              }
+            }
+          }
+        }
       }
     }
   }
