@@ -353,7 +353,6 @@ export default {
         x: () => {
           return -(container.scrollWidth - window.innerWidth);
         },
-        delay: 10,
         ease: "none",
         scrollTrigger: {
           trigger: container,
@@ -370,7 +369,7 @@ export default {
               self.progress * self.end - (self.end - window.innerWidth);
 
             if (isScrollForward) {
-              if (snapDifference > window.innerWidth * 0.2) {
+              if (snapDifference > window.innerWidth * 0.1) {
                 self.scroll(self.end);
                 isScrollForward = false;
               }
@@ -378,7 +377,7 @@ export default {
 
             if (
               direction === -1 &&
-              snapDifference > window.innerWidth * 0.3 &&
+              snapDifference > window.innerWidth * 0.2 &&
               snapDifference < window.innerWidth * 0.9
             ) {
               const snapProgress =
