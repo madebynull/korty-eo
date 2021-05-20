@@ -452,7 +452,7 @@ export default {
 
             if (isScrollForward) {
               if (snapDifference > window.innerWidth * 0.2) {
-                // self.scroll(self.end);
+                self.scroll(self.end);
                 isScrollForward = false;
               }
             }
@@ -467,7 +467,7 @@ export default {
               const differenceEndStart = self.end - self.start;
               const snapDeduction = snapProgress * differenceEndStart;
 
-              // self.scroll(self.end - (snapDeduction + 2));
+              self.scroll(self.end - (snapDeduction + 2));
 
               setTimeout(() => {
                 isScrollForward = true;
