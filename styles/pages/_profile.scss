@@ -538,9 +538,11 @@
           }
 
           .zikoko-ga {
+            display: flex;
             .googlearts {
               width: 241px;
-              margin-right: 400px;
+              margin-right: 280px;
+              margin-top: 35px;
 
               h3 {
                 @include heading-3;
@@ -553,11 +555,49 @@
               }
             }
           }
+
+          .zikoko {
+            width: 600px;
+            margin-right: 300px;
+
+            &__image {
+              width: 100%;
+            }
+
+            &__desc {
+              @include flex(space-between, flex-end);
+              max-width: 570px;
+              width: 100%;
+              margin-left: auto;
+
+              a {
+                display: inline-block;
+                margin-bottom: -10px;
+              }
+
+              h1 {
+                @include heading-1;
+              }
+
+              p {
+                line-height: 1;
+                width: 158px;
+              }
+            }
+          }
+
+          .coachella {
+            align-self: center;
+          }
         }
 
         &__quote {
           width: 100vw;
           @include flex(center, center);
+          h1 {
+            @include heading-1;
+            text-transform: uppercase;
+          }
         }
       }
     }

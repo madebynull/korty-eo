@@ -177,7 +177,7 @@
                     <img
                       src="https://res.cloudinary.com/dmwfd0zhh/image/upload/q_auto,f_auto/v1621406261/Korty/Rectangle_19_o44i0q.jpg"
                       alt="air max 200's"
-                      class="skewElem"
+                      class="skew-image"
                     />
                   </div>
                   <a href="/" target="_blank">
@@ -189,7 +189,7 @@
                     <img
                       src="https://res.cloudinary.com/dmwfd0zhh/image/upload/q_auto,f_auto/v1621406261/Korty/Rectangle_20_hkfszk.jpg"
                       alt="air max 200's"
-                      class="skewElem"
+                      class="skew-image"
                     />
                   </div>
                   <p>
@@ -219,7 +219,7 @@
                 <img
                   src="https://res.cloudinary.com/dmwfd0zhh/image/upload/q_auto,f_auto/v1621443387/Korty/Rectangle_22_zkazsw.jpg"
                   alt="Oxlade at Empawa"
-                  class="skewElem"
+                  class="skew-image"
                 />
               </div>
               <div class="empawa__desc">
@@ -242,6 +242,31 @@
                   Arts and Culture.
                 </p>
               </div>
+              <div class="zikoko">
+                <div class="zikoko__image">
+                  <img
+                    src="https://res.cloudinary.com/dmwfd0zhh/image/upload/v1621466610/Korty/image_rnnzho.jpg"
+                    alt=""
+                    class="skew-image"
+                  />
+                </div>
+                <div class="zikoko__desc">
+                  <a href="/">
+                    <arrow />
+                  </a>
+                  <div>
+                    <h1>
+                      ZIKOKO
+                    </h1>
+                    <p>
+                      Assistant Video Producer in 2018, promoted to a Video
+                      Producer in 2019
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="coachella"></div>
             </div>
           </div>
           <div class="work__quote">
@@ -260,7 +285,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import AnimatedLink from "../components/AnimatedLink/AnimatedLink.vue";
 import Arrow from "../components/Arrow.vue";
-import { snap } from "gsap/all";
+
 gsap.registerPlugin(ScrollTrigger);
 
 export default {
@@ -351,7 +376,7 @@ export default {
     worksAnimation(container) {
       let isScrollForward = true;
       const proxy = { skew: 0, bounce: 1 },
-        skewSetter = gsap.quickSetter(".skewElem", "skewX", "deg"),
+        skewSetter = gsap.quickSetter(".skew-image", "skewX", "deg"),
         // scaleSetter = gsap.quickSetter(".scaleEl", "scaleY"),
         clamp = gsap.utils.clamp(-30, 30),
         scaleClamp = gsap.utils.clamp(0.95, 1.1);
@@ -425,7 +450,10 @@ export default {
       });
       // console.log(anim.);
 
-      gsap.set(".skewElem", { transformOrigin: "right center", force3D: true });
+      gsap.set(".skew-image", {
+        transformOrigin: "right center",
+        force3D: true
+      });
 
       ScrollTrigger.addEventListener("refresh", () => {
         this.$nuxt.$emit("update-locomotive");
