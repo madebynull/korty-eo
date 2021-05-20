@@ -314,6 +314,55 @@
               </div>
               <h2>BBNAIJA</h2>
             </div>
+            <div class="keexs">
+              <img
+                src="https://res.cloudinary.com/dmwfd0zhh/image/upload/q_auto,f_auto/v1621540680/Korty/image_43_u9fsmz.jpg"
+                alt=""
+                class="keexs__image skew-image"
+              />
+              <div class="keexs__panel">
+                <h2>
+                  KEEXS
+                </h2>
+                <p>
+                  Edited a promotional video for Nigerian shoe brand, Keeks.
+                </p>
+                <a href="/" target="_blank">
+                  <arrow />
+                </a>
+              </div>
+            </div>
+            <div class="pamane">
+              <div class="pamane__left">
+                <img
+                  src="https://res.cloudinary.com/dmwfd0zhh/image/upload/q_auto,f_auto/v1621541975/Korty/korty-pamane_glwvwh.jpg"
+                  alt=""
+                  class="skew-image"
+                />
+              </div>
+              <div class="pamane__right">
+                <div class="pamane__top">
+                  <div class="pamane__image">
+                    <img
+                      src="https://res.cloudinary.com/dmwfd0zhh/image/upload/q_auto,f_auto/v1621542856/Korty/153576857_480678352950294_7236937184248464472_n_3_ktb05h.jpg"
+                      alt=""
+                    />
+                  </div>
+                  <div class="pamane__desc">
+                    <a href="/" target="_blank">
+                      <arrow />
+                    </a>
+                    <p>
+                      Photo modelling for the Lagos based clothing brand,
+                      Pamane.
+                    </p>
+                  </div>
+                </div>
+                <h1>
+                  PAMANE
+                </h1>
+              </div>
+            </div>
           </div>
           <div class="work__quote">
             <h1>End of Page</h1>
@@ -343,16 +392,6 @@ export default {
     this.marqueeAnimation();
     this.heroImageAnimation();
     this.worksAnimation(worksRef);
-
-    const locomotive = this.$refs.scroller.locomotive;
-    locomotive.on("scroll", e => {
-      if (typeof e.currentElements["hey"] === "object") {
-        let progress = e.currentElements["hey"].progress;
-        // console.log(progress);
-        // ouput log example: 0.34
-        // gsap example : myGsapAnimation.progress(progress);
-      }
-    });
   },
   methods: {
     initScrolltrigger() {
@@ -451,15 +490,15 @@ export default {
               self.progress * self.end - (self.end - window.innerWidth);
 
             if (isScrollForward) {
-              if (snapDifference > window.innerWidth * 0.2) {
-                // self.scroll(self.end);
+              if (snapDifference > window.innerWidth * 0.6) {
+                self.scroll(self.end);
                 isScrollForward = false;
               }
             }
 
             if (
               direction === -1 &&
-              snapDifference > window.innerWidth * 0.3 &&
+              snapDifference > window.innerWidth * 0.65 &&
               snapDifference < window.innerWidth * 0.9
             ) {
               const snapProgress =
@@ -467,7 +506,7 @@ export default {
               const differenceEndStart = self.end - self.start;
               const snapDeduction = snapProgress * differenceEndStart;
 
-              // self.scroll(self.end - (snapDeduction + 2));
+              self.scroll(self.end - (snapDeduction + 2));
 
               setTimeout(() => {
                 isScrollForward = true;

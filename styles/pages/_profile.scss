@@ -667,6 +667,70 @@
               @include heading-1;
             }
           }
+
+          .keexs {
+            width: 440px;
+
+            &__image {
+              width: 100%;
+              margin-bottom: 26px;
+            }
+
+            &__panel {
+              display: flex;
+
+              h2 {
+                @include heading-3;
+                margin-right: 40px;
+              }
+              p {
+                max-width: 158px;
+                line-height: 1;
+                margin-right: 28px;
+              }
+            }
+          }
+
+          .pamane {
+            width: 1010px;
+            @include flex(space-between, center);
+            &__top {
+              @include flex($align: flex-end);
+              margin-bottom: 40px;
+            }
+            &__image {
+              $size: 300px;
+              width: $size;
+              height: $size;
+              border-radius: 50%;
+              margin-right: 38px;
+              flex-shrink: 0;
+
+              img {
+                height: 100%;
+                border-radius: 50%;
+                object-position: 0 0;
+              }
+            }
+
+            &__desc {
+              p {
+                max-width: 158px;
+                line-height: 1;
+                margin-top: 28px;
+              }
+            }
+
+            &__left {
+              width: 450px;
+            }
+
+            &__right {
+              h1 {
+                @include heading-1;
+              }
+            }
+          }
         }
 
         &__quote {
