@@ -21,7 +21,7 @@
       <div class="c-intro">
         <div class="c-intro__image">
           <img
-            src="https://res.cloudinary.com/dmwfd0zhh/image/upload/v1620697813/Korty/image_20_bufuoi.jpg"
+            src="https://res.cloudinary.com/dmwfd0zhh/image/upload/q_auto,f_auto/v1620697813/Korty/image_20_bufuoi.jpg"
             alt=""
           />
         </div>

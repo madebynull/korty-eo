@@ -588,6 +588,84 @@
 
           .coachella {
             align-self: center;
+            width: 445px;
+            margin-top: 80px;
+
+            &__disclaimer {
+              max-width: 180px;
+              position: relative;
+              display: flex;
+            }
+
+            &__label {
+              @include flex(space-between, center);
+
+              p {
+                margin-left: 4px;
+                line-height: 1;
+              }
+
+              h3 {
+                @include heading-3;
+              }
+            }
+
+            &__title {
+              @include heading-2;
+              margin-bottom: 24px;
+            }
+
+            &__story {
+              @include flex(space-between);
+              max-width: 360px;
+              margin-left: auto;
+            }
+
+            &__desc {
+              border: 1px solid #abb1ba;
+              $size: 250px;
+              width: $size;
+              height: $size;
+              transform: rotate(-15deg);
+              border-radius: 50%;
+              @include flex(center, center);
+
+              p {
+                line-height: 1;
+                max-width: 160px;
+              }
+            }
+          }
+
+          .bbnaija {
+            width: 535px;
+
+            &__top {
+              @include flex(space-between, flex-end);
+              margin-bottom: 24px;
+
+              p {
+                line-height: 1;
+                margin-top: 28px;
+              }
+
+              .image-1 {
+                $size: 350px;
+                width: $size;
+                height: $size;
+                img {
+                  height: 100%;
+                  border-radius: 50%;
+                }
+              }
+              .image-2 {
+                width: 150px;
+              }
+            }
+
+            h2 {
+              @include heading-1;
+            }
           }
         }
 

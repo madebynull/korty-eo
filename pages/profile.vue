@@ -245,7 +245,7 @@
               <div class="zikoko">
                 <div class="zikoko__image">
                   <img
-                    src="https://res.cloudinary.com/dmwfd0zhh/image/upload/v1621466610/Korty/image_rnnzho.jpg"
+                    src="https://res.cloudinary.com/dmwfd0zhh/image/upload/q_auto,f_auto/v1621466610/Korty/image_rnnzho.jpg"
                     alt=""
                     class="skew-image"
                   />
@@ -266,7 +266,53 @@
                 </div>
               </div>
 
-              <div class="coachella"></div>
+              <div class="coachella">
+                <div class="coachella__label">
+                  <div class="coachella__disclaimer">
+                    <span>*</span>
+                    <p>
+                      not directly contracted by coachella
+                    </p>
+                  </div>
+                  <h3>2019</h3>
+                </div>
+                <h2 class="coachella__title">
+                  COACHELLA
+                </h2>
+                <div class="coachella__story">
+                  <div class="coachella__desc">
+                    <p>
+                      A documentation of an experience at the concert by
+                      Nigerian stylist, Mariam Aduke.
+                    </p>
+                  </div>
+                  <a href="/" target="_blank">
+                    <arrow />
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="bbnaija">
+              <div class="bbnaija__top">
+                <div class="image-1">
+                  <img
+                    src="https://res.cloudinary.com/dmwfd0zhh/image/upload/q_auto,f_auto/v1621524451/Korty/kortybbn1_v31czm.jpg"
+                    alt=""
+                  />
+                </div>
+                <div class="image-2">
+                  <img
+                    src="https://res.cloudinary.com/dmwfd0zhh/image/upload/q_auto,f_auto/v1621524466/Korty/kortybbn2_dixrhc.jpg"
+                    alt=""
+                  />
+                  <p>
+                    At Zikoko, Korty produced a series of shows for Big Brother
+                    Naija ‘Pepper Dem’ .
+                  </p>
+                </div>
+              </div>
+              <h2>BBNAIJA</h2>
             </div>
           </div>
           <div class="work__quote">
@@ -406,7 +452,7 @@ export default {
 
             if (isScrollForward) {
               if (snapDifference > window.innerWidth * 0.2) {
-                self.scroll(self.end);
+                // self.scroll(self.end);
                 isScrollForward = false;
               }
             }
@@ -421,7 +467,7 @@ export default {
               const differenceEndStart = self.end - self.start;
               const snapDeduction = snapProgress * differenceEndStart;
 
-              self.scroll(self.end - (snapDeduction + 2));
+              // self.scroll(self.end - (snapDeduction + 2));
 
               setTimeout(() => {
                 isScrollForward = true;
