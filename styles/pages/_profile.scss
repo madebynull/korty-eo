@@ -431,9 +431,7 @@
             flex: 0 0 auto;
 
             // lasts
-            &:not(:last-of-type) {
-              margin-right: 300px;
-            }
+            margin-right: 300px;
           }
 
           p {
@@ -736,9 +734,45 @@
         &__quote {
           width: 100vw;
           @include flex(center, center);
+          padding: 0 40px;
+
+          .desc {
+            @include flex($align: center);
+            margin-bottom: 36px;
+            margin-left: 22.5%;
+
+            p {
+              @include paragraph;
+              color: $col-gray;
+              line-height: 1;
+              margin-left: 20px;
+              max-width: 158px;
+            }
+          }
+
+          .row-2 {
+            @include flex($align: center);
+
+            .row-image {
+              max-width: 250px;
+              margin-left: 36px;
+            }
+          }
+
           h1 {
             @include heading-1;
-            text-transform: uppercase;
+            @include variableFonts(50, 110);
+            line-height: 102%;
+            // text-align: center;
+
+            @include media(">1000px") {
+              letter-spacing: -9px;
+              @include variableFonts(50, 126);
+            }
+
+            span {
+              font-style: italic;
+            }
           }
         }
       }

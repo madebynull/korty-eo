@@ -365,7 +365,28 @@
             </div>
           </div>
           <div class="work__quote">
-            <h1>End of Page</h1>
+            <div>
+              <div class="desc">
+                <a href="/" target="_blank">
+                  <arrow />
+                </a>
+                <p>
+                  Now, Korty is basically freelancing - making videos for her
+                  youtube channnel, instagram and clients.
+                </p>
+              </div>
+              <h1>MAKING FILM THE</h1>
+              <div class="row-2">
+                <h1>SLOWER WAY,</h1>
+                <div class="row-image">
+                  <img
+                    src="https://res.cloudinary.com/dmwfd0zhh/image/upload/q_auto,f_auto/v1621568117/Korty/Rectangle_23_dxgpdz.jpg"
+                    alt=""
+                  />
+                </div>
+              </div>
+              <h1><span class="fraunces">Learning</span> BY DOING</h1>
+            </div>
           </div>
         </div>
         <div class="c-profile__work--mobile show-mobile"></div>
