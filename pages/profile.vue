@@ -5,7 +5,7 @@
       smooth: true,
       direction: 'vertical',
       getSpeed: true,
-      lerp: 0.05,
+      lerp: lerpValue,
       smartphone: {
         smooth: true
       },
@@ -408,6 +408,11 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default {
   components: { AnimatedLink, Arrow },
+  data() {
+    return {
+      lerpValue: 0.06
+    };
+  },
   mounted() {
     const worksRef = this.$refs.works;
 
@@ -415,6 +420,12 @@ export default {
     this.marqueeAnimation();
     this.heroImageAnimation();
     this.worksAnimation(worksRef);
+
+    const locomotive = this.$refs.scroller.locomotive;
+    // locomotive.lerp = 0.001;
+    // locomotive.init();
+    // locomotive.start();
+    console.log((locomotive.lerp = 0.01));
   },
   methods: {
     initScrolltrigger() {
@@ -462,7 +473,7 @@ export default {
         scrollTrigger: {
           trigger: ".c-profile__headline",
           scroller: this.$refs.scroller.locomotive.el,
-          scrub: true,
+          scrub: 1,
           start: "top bottom",
           end: "bottom center"
         },
@@ -486,21 +497,24 @@ export default {
       const proxy = { skew: 0, bounce: 1 },
         skewSetter = gsap.quickSetter(".skew-image", "skewX", "deg"),
         // scaleSetter = gsap.quickSetter(".scaleEl", "scaleY"),
-        clamp = gsap.utils.clamp(-30, 30),
-        scaleClamp = gsap.utils.clamp(0.95, 1.1);
+        clamp = gsap.utils.clamp(-30, 30);
+      // scaleClamp = gsap.utils.clamp(0.95, 1.1);
 
       gsap.to(container, {
         x: () => {
-          return -(container.scrollWidth - window.innerWidth);
+          return -(container.scrollWidth - innerWidth);
         },
         ease: "none",
+
         scrollTrigger: {
           trigger: container,
           invalidateOnRefresh: true,
           scroller: this.$refs.scroller.locomotive.el,
           pin: true,
           scrub: 1,
-          start: "top top",
+          end: () => "+=" + (container.offsetWidth + innerWidth),
+          markers: true,
+
           onUpdate: self => {
             let skew = clamp(self.getVelocity() / -230);
             // const bounce = scaleClamp(
@@ -541,7 +555,6 @@ export default {
               // proxy.bounce = bounce;
               gsap.to(proxy, {
                 skew: 0,
-                scaleY: 0,
                 duration: 0.7,
                 ease: "power3",
                 overwrite: true,
@@ -551,8 +564,7 @@ export default {
                 }
               });
             }
-          },
-          end: () => "+=" + container.offsetWidth
+          }
           // markers: true
         }
       });
