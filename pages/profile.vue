@@ -5,7 +5,7 @@
       smooth: true,
       direction: 'vertical',
       getSpeed: true,
-      lerp: 0.001,
+      lerp: 0.05,
       smartphone: {
         smooth: true
       },
