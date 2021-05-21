@@ -4,6 +4,8 @@
     :getted-options="{
       smooth: true,
       direction: 'vertical',
+      getSpeed: true,
+      lerp: 0.001,
       smartphone: {
         smooth: true
       },
