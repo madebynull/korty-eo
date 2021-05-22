@@ -5,7 +5,7 @@
       smooth: true,
       direction: 'vertical',
       getSpeed: true,
-      lerp: lerpValue,
+      lerp: 0.08,
       smartphone: {
         smooth: true
       },
@@ -111,7 +111,7 @@
               Korty left her family home in Ibadan for Lagos after getting an
               offer to become a writer at a newly formed media company, Zikoko.
               Work was going well, until she got bored and literally said “fuck
-              shit, I wants to make videos”. She is mostly self taught, it
+              shit, I want to make videos”. She is mostly self taught, it
               definitely didn’t hurt to have unlimited access to the internet.
               She had a little more creative freedom when she finally left for
               her own apartment after living with relatives for a year.
@@ -146,7 +146,7 @@
               <div class="image-con">
                 <div class="intro__image">
                   <img
-                    src="https://res.cloudinary.com/dmwfd0zhh/image/upload/q_auto,f_auto/v1621360631/Korty/155970126_722279075123050_2581246909765747927_n_1_ieppbb.jpg"
+                    src="https://res.cloudinary.com/dmwfd0zhh/image/upload/q_auto,f_auto/v1621690413/Korty/korty-work_ukm6yk.jpg"
                     alt=""
                   />
                 </div>
@@ -391,9 +391,104 @@
             </div>
           </div>
         </div>
-        <div class="c-profile__work--mobile show-mobile"></div>
+
+        <div class="c-profile__work--mobile show-tablet">
+          <h1>W<span class="fraunces">O</span>RK</h1>
+          <p class="first-para">
+            Korty Eniola has worked accross fashion, entertainment and media
+            industries as a writer, editor, visual desiger, model, content
+            producer and now filmmaker.
+          </p>
+          <div class="intro__image">
+            <div />
+          </div>
+
+          <div class="work-places">
+            <a href="/" target="__blank" class="right">NIKE</a>
+            <a href="/" target="__blank" class="right">GTBANK</a>
+            <a href="/" target="__blank" class="right">EMPAWA</a>
+            <a href="/" target="__blank" class="center">
+              ZIK<span class="fraunces">O</span>K<span class="fraunces">O</span>
+            </a>
+            <a href="/" target="__blank" class="center">GOOGLE ARTS</a>
+            <a href="/" target="__blank" class="center"
+              >C<span class="fraunces">O</span>ACHELLA</a
+            >
+            <a href="/" target="__blank">BBNAIJA</a>
+            <a href="/" target="__blank">KEEXS</a>
+            <a href="/" target="__blank">PAMANE</a>
+          </div>
+        </div>
       </div>
-      <div class="c-profile__"></div>
+
+      <div class="c-profile__footer">
+        <div class="inner-con">
+          <div class="footer__left show-desktop">
+            <button class="credits-link">
+              <div class="c-inner">
+                <animated-link class="c-bezier">
+                  credits
+                </animated-link>
+              </div>
+            </button>
+            <p>
+              Korty EO <br />
+              by Seyi XO & Isaac Fayemi
+            </p>
+            <div class="footer__image">
+              <img
+                src="https://res.cloudinary.com/dmwfd0zhh/image/upload/q_auto,f_auto/v1621637709/Korty/korty-archive-1_kjvsf4.jpg"
+                alt=""
+              />
+            </div>
+          </div>
+          <div class="footer__center">
+            <h1>Thank <span class="fraunces">you!</span></h1>
+            <div class="c-bottom">
+              <div class="bottom__left">
+                <p class="c-desc">
+                  If you enjoyed going through this web experience, consider
+                  sharing it on social media so other people get to see it.
+                </p>
+                <div class="socials">
+                  <a href="/" target="_blank" class="social">Tweet</a>
+                  <a href="/" target="_blank" class="social">
+                    Post on Instagram
+                  </a>
+                </div>
+                <p class="c-facebook show-desktop">
+                  If you still use Facebook, we want better for you.
+                </p>
+              </div>
+              <div class="bottom__right">
+                <p>
+                  Have a look at the Credits and support all the awesome
+                  creators whose works were featured, If you still want to
+                  continue the experience, head over to the archive page.
+                </p>
+
+                <button class="credits-link">
+                  <div class="c-inner">
+                    <animated-link class="c-bezier">
+                      credits
+                    </animated-link>
+                  </div>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="footer__right">
+            <nuxt-link class="c-circular-link" to="/archive">
+              <circular-link>
+                View Archive
+              </circular-link>
+            </nuxt-link>
+            <p class="show-mobile">
+              Korty EO by Seyi Oluwadare & Isaac Fayemi
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
   </LocomotiveScroll>
 </template>
@@ -403,29 +498,31 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import AnimatedLink from "../components/AnimatedLink/AnimatedLink.vue";
 import Arrow from "../components/Arrow.vue";
+import CircularLink from "../components/CircularLink/CircularLink.vue";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default {
-  components: { AnimatedLink, Arrow },
+  components: { AnimatedLink, Arrow, CircularLink },
   data() {
     return {
-      lerpValue: 0.06
+      width: 0
     };
   },
   mounted() {
     const worksRef = this.$refs.works;
+    this.width = window.innerWidth;
 
     this.initScrolltrigger();
     this.marqueeAnimation();
     this.heroImageAnimation();
     this.worksAnimation(worksRef);
-
-    const locomotive = this.$refs.scroller.locomotive;
-    // locomotive.lerp = 0.001;
-    // locomotive.init();
-    // locomotive.start();
-    console.log((locomotive.lerp = 0.01));
+  },
+  watch: {
+    width() {
+      // const worksRef = this.$refs.works;
+      // this.worksAnimation(worksRef);
+    }
   },
   methods: {
     initScrolltrigger() {
@@ -513,8 +610,6 @@ export default {
           pin: true,
           scrub: 1,
           end: () => "+=" + (container.offsetWidth + innerWidth),
-          markers: true,
-
           onUpdate: self => {
             let skew = clamp(self.getVelocity() / -230);
             // const bounce = scaleClamp(
@@ -527,15 +622,15 @@ export default {
               self.progress * self.end - (self.end - window.innerWidth);
 
             if (isScrollForward) {
-              if (snapDifference > window.innerWidth * 0.6) {
-                self.scroll(self.end);
+              if (snapDifference > window.innerWidth * 0.5) {
+                this.width > 768 && self.scroll(self.end);
                 isScrollForward = false;
               }
             }
 
             if (
               direction === -1 &&
-              snapDifference > window.innerWidth * 0.65 &&
+              snapDifference > window.innerWidth * 0.6 &&
               snapDifference < window.innerWidth * 0.9
             ) {
               const snapProgress =
@@ -543,7 +638,7 @@ export default {
               const differenceEndStart = self.end - self.start;
               const snapDeduction = snapProgress * differenceEndStart;
 
-              self.scroll(self.end - (snapDeduction + 2));
+              this.width > 768 && self.scroll(self.end - (snapDeduction + 2));
 
               setTimeout(() => {
                 isScrollForward = true;
@@ -577,6 +672,7 @@ export default {
 
       ScrollTrigger.addEventListener("refresh", () => {
         this.$nuxt.$emit("update-locomotive");
+        this.width = window.innerWidth;
       });
 
       ScrollTrigger.refresh();

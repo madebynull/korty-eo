@@ -316,12 +316,16 @@
 
           .right {
             .image {
-              max-width: 120px;
-              max-height: 120px;
+              max-width: 100px;
+              max-height: 100px;
               margin-left: auto;
+              margin-right: 80px;
 
               @include media(">tablet") {
+                max-width: 120px;
+                max-height: 120px;
                 margin-left: unset;
+                margin-right: unset;
               }
             }
           }
@@ -754,14 +758,18 @@
             @include flex($align: center);
 
             .row-image {
-              max-width: 250px;
+              max-width: 200px;
               margin-left: 36px;
+
+              @include media(">1000px") {
+                max-width: 250px;
+              }
             }
           }
 
           h1 {
             @include heading-1;
-            @include variableFonts(50, 110);
+            @include variableFonts(40, 110);
             line-height: 102%;
             // text-align: center;
 
@@ -775,6 +783,237 @@
             }
           }
         }
+      }
+    }
+
+    &--mobile {
+      @include padding;
+      h1 {
+        @include heading-1;
+        text-align: right;
+        margin-bottom: 28px;
+      }
+
+      p {
+        @include paragraph;
+        color: #525760;
+        max-width: 300px;
+        margin-left: auto;
+        line-height: 1.2;
+      }
+
+      .intro__image {
+        max-width: 420px;
+        margin-right: auto;
+        margin-top: 40px;
+
+        > div {
+          width: 100%;
+          padding-bottom: 100%;
+          background: url("https://res.cloudinary.com/dmwfd0zhh/image/upload/q_auto,f_auto/v1621690413/Korty/korty-work_ukm6yk.jpg");
+          background-size: cover;
+          border-radius: 50%;
+        }
+      }
+
+      .work-places {
+        padding-top: 28px;
+        padding-bottom: 42px;
+        max-width: 424px;
+        margin-right: auto;
+
+        a {
+          @include heading-1;
+          @include variableFonts(65, 110);
+          display: block;
+          white-space: nowrap;
+
+          &:not(:last-of-type) {
+            margin-bottom: 6px;
+          }
+
+          &.right {
+            text-align: right;
+          }
+          &.center {
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+
+  &__footer {
+    @include padding;
+    padding-bottom: 60px;
+
+    @include media(">tablet") {
+      height: 100vh;
+      padding: 0 24px;
+      padding-bottom: 60px;
+      min-height: 700px;
+      @include flex($align: flex-end);
+    }
+
+    @include media(">1000px") {
+      padding: 0 48px;
+      padding-bottom: 60px;
+    }
+
+    p {
+      @include paragraph;
+      color: #525760;
+    }
+
+    .footer {
+      &__image {
+        $size: 90px;
+        width: $size;
+        height: $size;
+        img {
+          border-radius: 50%;
+          height: 100%;
+        }
+      }
+
+      &__left {
+        max-width: 240px;
+        width: 100%;
+        margin-right: 30px;
+
+        p {
+          margin-bottom: 56px;
+        }
+
+        .credits-link {
+          margin-bottom: 56px;
+        }
+      }
+
+      &__center {
+        width: 100%;
+        margin-right: 20px;
+        flex-shrink: 0.5;
+
+        @include media(">tablet") {
+          transform: translateX(30px);
+        }
+        h1 {
+          max-width: 700px;
+          @include heading-1;
+          margin-bottom: 50px;
+          span {
+            font-style: italic;
+          }
+
+          @include media(">tablet") {
+            text-align: center;
+            @include variableFonts(40, 120);
+          }
+        }
+
+        .c-bottom {
+          @include media(">tablet") {
+            max-width: 670px;
+            margin: 0 auto;
+            @include flex(space-between);
+          }
+
+          @include media(">1200px") {
+            transform: translateX(-20px);
+          }
+
+          .bottom {
+            &__left {
+              margin-right: 20px;
+              .c-desc {
+                max-width: 380px;
+                margin-bottom: 32px;
+
+                @include media(">tablet") {
+                  max-width: 340px;
+                }
+              }
+
+              .socials {
+                display: flex;
+                flex-wrap: wrap;
+                margin-bottom: 8px;
+
+                .social {
+                  padding: 12px;
+                  margin-bottom: 24px;
+                  border: 1px solid #abb1ba;
+                  border-radius: 64px;
+                  @include title-small;
+                  &:not(:last-of-type) {
+                    margin-right: 24px;
+                  }
+                }
+              }
+
+              .c-facebook {
+                color: #abb1ba;
+              }
+            }
+
+            &__right {
+              p {
+                max-width: 300px;
+                margin-left: auto;
+
+                @include media(">tablet") {
+                  max-width: 220px;
+                  margin-left: unset;
+                }
+              }
+
+              .credits-link {
+                margin-left: auto;
+                margin-top: 40px;
+                width: 120px;
+                height: 120px;
+                @include media(">tablet") {
+                  display: none;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      &__right {
+        max-width: 340px;
+        margin: 0 auto;
+
+        p {
+          text-align: center;
+        }
+
+        @include media(">tablet") {
+          min-width: 250px;
+          max-width: 400px;
+          width: 100%;
+          position: relative;
+          bottom: -60px;
+          margin: unset;
+        }
+
+        @include media(">1000px") {
+          min-width: 300px;
+        }
+
+        svg {
+          textPath {
+            letter-spacing: 24px;
+          }
+        }
+      }
+    }
+    .inner-con {
+      width: 100%;
+      @include media(">tablet") {
+        @include flex(space-between, flex-end);
       }
     }
   }

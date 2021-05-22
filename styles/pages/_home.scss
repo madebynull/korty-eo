@@ -1,26 +1,4 @@
 .c-landing {
-  .credits-link {
-    width: 90px;
-    height: 90px;
-    grid-column-start: 1;
-    grid-column-end: 2;
-    position: relative;
-    z-index: 5;
-    display: inline-block;
-    grid-row-start: 10;
-    border-radius: 50%;
-    position: relative;
-    margin-top: calc(100 / 12 * 1px);
-    // transform: translateY(15%);
-    @include flex(center, center);
-    @include paragraph;
-    text-transform: uppercase;
-    border: 1px solid #abb1ba;
-    background: transparent;
-    outline: none;
-    letter-spacing: -0.5px;
-  }
-
   .desktop-landing {
     padding: 48px 52px;
     display: none;
@@ -141,6 +119,7 @@
         grid-column-start: 10;
         grid-column-end: 13;
         grid-row-start: 5;
+        position: relative;
       }
 
       .c-hoverlink {
