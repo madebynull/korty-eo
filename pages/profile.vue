@@ -697,7 +697,7 @@ export default {
       // console.log();
 
       timeline.to(coachellaDesc, {
-        rotate: "-90deg",
+        rotate: "2deg",
         overwrite: "auto",
         scrollTrigger: {
           scrub: 1,

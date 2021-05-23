@@ -630,7 +630,7 @@
               $size: 250px;
               width: $size;
               height: $size;
-              // transform: rotate(-15deg);
+              transform: rotate(-45deg);
               border-radius: 50%;
               @include flex(center, center);
 
