@@ -91,9 +91,8 @@ a {
   display: inline-flex;
   align-items: center;
   position: relative;
-  z-index: -1;
+
   overflow-y: hidden;
-  transform: rotate(45deg);
   width: 100%;
   height: 100%;
 

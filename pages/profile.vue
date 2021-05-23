@@ -164,7 +164,7 @@
                   content producer and now filmmaker.
                 </p>
                 <div class="intro__cta">
-                  <arrow />
+                  <animated-arrow />
                   <p>Here are some featured projects, Keep scrolling to see.</p>
                 </div>
               </div>
@@ -182,9 +182,7 @@
                       class="skew-image"
                     />
                   </div>
-                  <a href="/" target="_blank">
-                    <arrow />
-                  </a>
+                  <animated-arrow href="/" />
                 </div>
                 <div class="nike__right">
                   <div class="nike__image2">
@@ -229,9 +227,7 @@
                   Worked as a content lead at Empawa Africa, single handedly
                   directing and producing shows.
                 </p>
-                <a href="/" target="_blank">
-                  <arrow />
-                </a>
+                <animated-arrow href="/" />
               </div>
               <h1>EMPAWA</h1>
             </div>
@@ -253,9 +249,7 @@
                   />
                 </div>
                 <div class="zikoko__desc">
-                  <a href="/">
-                    <arrow />
-                  </a>
+                  <animated-arrow href="/" />
                   <div>
                     <h1>
                       ZIKOKO
@@ -288,9 +282,7 @@
                       Nigerian stylist, Mariam Aduke.
                     </p>
                   </div>
-                  <a href="/" target="_blank">
-                    <arrow />
-                  </a>
+                  <animated-arrow href="/" />
                 </div>
               </div>
             </div>
@@ -329,9 +321,7 @@
                 <p>
                   Edited a promotional video for Nigerian shoe brand, Keeks.
                 </p>
-                <a href="/" target="_blank">
-                  <arrow />
-                </a>
+                <animated-arrow href="/" />
               </div>
             </div>
             <div class="pamane">
@@ -351,9 +341,7 @@
                     />
                   </div>
                   <div class="pamane__desc">
-                    <a href="/" target="_blank">
-                      <arrow />
-                    </a>
+                    <animated-arrow href="/" />
                     <p>
                       Photo modelling for the Lagos based clothing brand,
                       Pamane.
@@ -369,9 +357,7 @@
           <div class="work__quote">
             <div>
               <div class="desc">
-                <a href="/" target="_blank">
-                  <arrow />
-                </a>
+                <animated-arrow href="/" />>
                 <p>
                   Now, Korty is basically freelancing - making videos for her
                   youtube channnel, instagram and clients.
@@ -523,11 +509,12 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import AnimatedLink from "../components/AnimatedLink/AnimatedLink.vue";
 import Arrow from "../components/Arrow.vue";
 import CircularLink from "../components/CircularLink/CircularLink.vue";
+import AnimatedArrow from "../components/AnimatedArrow.vue";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default {
-  components: { AnimatedLink, Arrow, CircularLink },
+  components: { AnimatedLink, Arrow, CircularLink, AnimatedArrow },
   data() {
     return {
       width: 0
@@ -635,26 +622,29 @@ export default {
         // scaleSetter = gsap.quickSetter(".scaleEl", "scaleY"),
         clamp = gsap.utils.clamp(-30, 30);
       // scaleClamp = gsap.utils.clamp(0.95, 1.1);
+      let timeline = gsap.timeline();
+      const coachellaDesc = document.querySelector(".coachella__desc");
 
       gsap.to(container, {
         x: () => {
           return -(container.scrollWidth - innerWidth);
         },
         ease: "none",
-
+        overwrite: "auto",
         scrollTrigger: {
           trigger: container,
           invalidateOnRefresh: true,
           scroller: this.$refs.scroller.locomotive.el,
           pin: true,
           scrub: 1,
+
           end: () => "+=" + (container.offsetWidth + innerWidth),
           onUpdate: self => {
             let skew = clamp(self.getVelocity() / -230);
             // const bounce = scaleClamp(
             //   1 - Math.abs((self.getVelocity() / -300) * 0.25)
             // );
-
+            // console.log(coachellaDesc.parentNode.offsetLeft);
             const direction = self.direction;
 
             const snapDifference =
@@ -703,6 +693,28 @@ export default {
         }
       });
       // console.log(anim.);
+
+      // console.log();
+
+      timeline.to(coachellaDesc, {
+        rotate: "-90deg",
+        overwrite: "auto",
+        scrollTrigger: {
+          scrub: 1,
+          // markers: true,
+          invalidateOnRefresh: true,
+          scroller: this.$refs.scroller.locomotive.el,
+          start: () =>
+            container.scrollWidth -
+            coachellaDesc.parentNode.offsetLeft -
+            coachellaDesc.parentNode.getBoundingClientRect().width -
+            coachellaDesc.getBoundingClientRect().width +
+            20,
+          end: () =>
+            coachellaDesc.parentNode.offsetLeft -
+            coachellaDesc.parentNode.getBoundingClientRect().width
+        }
+      });
 
       gsap.set(".skew-image", {
         transformOrigin: "right center",

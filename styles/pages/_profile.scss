@@ -355,10 +355,8 @@
           }
         }
       }
-      svg {
-        path {
-          transform: rotate(-45deg);
-        }
+      .c-link {
+        transform: rotate(45deg);
       }
 
       .work {
@@ -415,10 +413,8 @@
                 width: 100%;
                 margin-left: auto;
 
-                svg {
-                  path {
-                    transform: rotate(0deg);
-                  }
+                .c-link {
+                  transform: rotate(90deg);
                 }
 
                 p {
@@ -480,7 +476,7 @@
                 line-height: 1;
               }
 
-              svg {
+              a {
                 margin-left: auto;
               }
             }
@@ -634,7 +630,7 @@
               $size: 250px;
               width: $size;
               height: $size;
-              transform: rotate(-15deg);
+              // transform: rotate(-15deg);
               border-radius: 50%;
               @include flex(center, center);
 
