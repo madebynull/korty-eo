@@ -415,6 +415,12 @@
                 width: 100%;
                 margin-left: auto;
 
+                svg {
+                  path {
+                    transform: rotate(0deg);
+                  }
+                }
+
                 p {
                   max-width: 226px;
                   margin-left: 18px;
@@ -1005,7 +1011,7 @@
 
         svg {
           textPath {
-            letter-spacing: 24px;
+            letter-spacing: 15px;
           }
         }
       }

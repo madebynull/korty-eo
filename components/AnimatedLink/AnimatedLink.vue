@@ -19,9 +19,15 @@ export default {};
 a,
 button {
   display: inline-block;
-  &:hover {
-    .c-link__inner {
-      transform: translateY(-100%);
+}
+
+@media (min-width: 769px) {
+  a,
+  button {
+    &:hover {
+      .c-link__inner {
+        transform: translateY(-100%);
+      }
     }
   }
 }

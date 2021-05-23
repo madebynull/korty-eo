@@ -1,13 +1,7 @@
 <template>
   <div class="c-svgs">
     <div class="svg-1">
-      <svg
-        width="49"
-        height="48"
-        viewBox="0 0 49 48"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
+      <svg viewBox="0 0 49 48" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path
           d="M32.844 21.9998L22.116 11.2718L24.944 8.44385L40.5 23.9998L24.944 39.5558L22.116 36.7278L32.844 25.9998H8.5V21.9998H32.844Z"
           fill="#121821"
@@ -61,6 +55,13 @@ export default {};
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
+  width: 100%;
+  max-width: 40px;
+
+  svg {
+    width: 100px;
+    max-width: 40px;
+  }
 }
 
 @media (min-width: 769px) {
@@ -76,10 +77,10 @@ export default {};
   animation: rotate 30s linear infinite;
   transform-origin: center;
   textPath {
-    font-size: 35px;
+    font-size: 24px;
     font-family: "Grotesk";
     text-transform: uppercase;
-    letter-spacing: 25px;
+    letter-spacing: 15.5px;
     fill: #000000;
   }
 

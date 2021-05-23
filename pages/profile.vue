@@ -451,9 +451,15 @@
                   sharing it on social media so other people get to see it.
                 </p>
                 <div class="socials">
-                  <a href="/" target="_blank" class="social">Tweet</a>
                   <a href="/" target="_blank" class="social">
-                    Post on Instagram
+                    <animated-link class="c-bezier">
+                      Tweet
+                    </animated-link>
+                  </a>
+                  <a href="/" target="_blank" class="social">
+                    <animated-link class="c-bezier">
+                      Post on Instagram
+                    </animated-link>
                   </a>
                 </div>
                 <p class="c-facebook show-desktop">
@@ -480,7 +486,7 @@
           <div class="footer__right">
             <nuxt-link class="c-circular-link" to="/archive">
               <circular-link>
-                View Archive
+                View Korty's Archive
               </circular-link>
             </nuxt-link>
             <p class="show-mobile">

@@ -103,7 +103,7 @@
         </div>
         <nuxt-link class="c-circular-link" to="/profile">
           <circular-link>
-            View Profile
+            View Korty's Profile
           </circular-link>
         </nuxt-link>
       </div>

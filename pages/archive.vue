@@ -9,11 +9,19 @@
     <div class="tall">
       <h1>Korty</h1>
       <p>Website coming up</p>
+      <div style="margin: 20px;">
+        <animated-arrow href="/" />
+      </div>
     </div>
   </LocomotiveScroll>
 </template>
 
-<script></script>
+<script>
+import AnimatedArrow from "../components/AnimatedArrow.vue";
+export default {
+  components: { AnimatedArrow }
+};
+</script>
 
 <style lang="scss" scoped>
 h1 {
