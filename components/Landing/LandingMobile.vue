@@ -117,7 +117,7 @@
       <div>
         <nuxt-link class="c-circular-link" to="/profile">
           <circular-link label="profile-1">
-            View Profile
+            View Korty's Profile
           </circular-link>
         </nuxt-link>
       </div>
