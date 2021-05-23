@@ -357,7 +357,7 @@
           <div class="work__quote">
             <div>
               <div class="desc">
-                <animated-arrow href="/" />>
+                <animated-arrow href="/" />
                 <p>
                   Now, Korty is basically freelancing - making videos for her
                   youtube channnel, instagram and clients.
