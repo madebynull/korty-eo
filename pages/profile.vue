@@ -393,7 +393,7 @@
         </div>
 
         <div class="c-profile__work--mobile show-tablet">
-          <h1>W<span class="fraunces">O</span>RK</h1>
+          <h1 class="first-heading">W<span class="fraunces">O</span>RK</h1>
           <p class="first-para">
             Korty Eniola has worked accross fashion, entertainment and media
             industries as a writer, editor, visual desiger, model, content
@@ -403,7 +403,7 @@
             <div />
           </div>
 
-          <div class="work-places">
+          <div class="work__places">
             <a href="/" target="__blank" class="right">NIKE</a>
             <a href="/" target="__blank" class="right">GTBANK</a>
             <a href="/" target="__blank" class="right">EMPAWA</a>
@@ -417,6 +417,22 @@
             <a href="/" target="__blank">BBNAIJA</a>
             <a href="/" target="__blank">KEEXS</a>
             <a href="/" target="__blank">PAMANE</a>
+          </div>
+
+          <div class="work__quote">
+            <img
+              src="https://res.cloudinary.com/dmwfd0zhh/image/upload/q_auto,f_auto/v1621568117/Korty/Rectangle_23_dxgpdz.jpg"
+              alt=""
+            />
+
+            <h1>
+              MAKING FILM THE SLOWER WAY,
+              <span class="fraunces">Learning</span> BY DOING
+            </h1>
+            <p>
+              Now, Korty is basically freelancing - making videos for her
+              youtube channnel, instagram and clients.
+            </p>
           </div>
         </div>
       </div>

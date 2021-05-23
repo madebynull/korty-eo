@@ -794,18 +794,25 @@
 
     &--mobile {
       @include padding;
-      h1 {
-        @include heading-1;
+
+      .first-heading {
         text-align: right;
         margin-bottom: 28px;
+      }
+
+      h1 {
+        @include heading-1;
       }
 
       p {
         @include paragraph;
         color: #525760;
+        line-height: 1.2;
+      }
+
+      .first-para {
         max-width: 300px;
         margin-left: auto;
-        line-height: 1.2;
       }
 
       .intro__image {
@@ -822,7 +829,7 @@
         }
       }
 
-      .work-places {
+      .work__places {
         padding-top: 28px;
         padding-bottom: 42px;
         max-width: 424px;
@@ -833,10 +840,7 @@
           @include variableFonts(65, 110);
           display: block;
           white-space: nowrap;
-
-          &:not(:last-of-type) {
-            margin-bottom: 6px;
-          }
+          margin-bottom: 6px;
 
           &.right {
             text-align: right;
@@ -844,6 +848,33 @@
           &.center {
             text-align: center;
           }
+        }
+      }
+
+      .work__quote {
+        max-width: 430px;
+        margin-left: auto;
+        margin-bottom: 160px;
+
+        img {
+          margin-bottom: 24px;
+        }
+        h1 {
+          margin-bottom: 24px;
+          text-align: right;
+          span {
+            font-style: italic;
+          }
+          font-size: 60px;
+
+          @include media(">400px") {
+            font-size: 70px;
+          }
+        }
+
+        p {
+          max-width: 75%;
+          margin-left: auto;
         }
       }
     }
