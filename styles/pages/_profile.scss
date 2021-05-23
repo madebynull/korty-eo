@@ -835,6 +835,14 @@
         max-width: 424px;
         margin-right: auto;
 
+        .google-arts {
+          overflow: hidden;
+
+          span {
+            display: inline-block;
+          }
+        }
+
         a {
           @include heading-1;
           @include variableFonts(65, 110);

@@ -43,6 +43,7 @@ export default {
   },
   mounted() {
     this.preload();
+    this.$nuxt.$emit("update-locomotive");
   },
   watch: {
     percentageLoaded(newValue, oldValue) {

@@ -410,7 +410,9 @@
             <a href="/" target="__blank" class="center">
               ZIK<span class="fraunces">O</span>K<span class="fraunces">O</span>
             </a>
-            <a href="/" target="__blank" class="center">GOOGLE ARTS</a>
+            <a href="/" target="__blank" class="center google-arts">
+              <span>GOOGLE ARTS & CULTURE</span>
+            </a>
             <a href="/" target="__blank" class="center"
               >C<span class="fraunces">O</span>ACHELLA</a
             >
@@ -539,6 +541,9 @@ export default {
     this.marqueeAnimation();
     this.heroImageAnimation();
     this.worksAnimation(worksRef);
+    this.googleArtsAnimation();
+
+    this.$nuxt.$emit("update-locomotive");
   },
   watch: {
     width() {
@@ -573,7 +578,6 @@ export default {
         }
       });
     },
-
     marqueeAnimation() {
       gsap.to(".headline__text", {
         scrollTrigger: {
@@ -582,6 +586,19 @@ export default {
           scrub: true,
           start: "top 90%",
           end: "bottom 10%"
+          // markers: true
+        },
+        xPercent: -50
+      });
+    },
+    googleArtsAnimation() {
+      gsap.to(".google-arts span", {
+        scrollTrigger: {
+          trigger: ".google-arts",
+          scroller: this.$refs.scroller.locomotive.el,
+          scrub: true,
+          start: "top 40%",
+          end: "bottom top"
           // markers: true
         },
         xPercent: -50
