@@ -518,14 +518,8 @@ gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
 export default {
   components: { AnimatedLink, Arrow, CircularLink, AnimatedArrow },
-  data() {
-    return {
-      width: 0
-    };
-  },
   mounted() {
     const worksRef = this.$refs.works;
-    this.width = window.innerWidth;
 
     this.initScrolltrigger();
     this.marqueeAnimation();
@@ -534,12 +528,6 @@ export default {
     this.googleArtsAnimation();
 
     this.$nuxt.$emit("update-locomotive");
-  },
-  watch: {
-    width() {
-      // const worksRef = this.$refs.works;
-      // this.worksAnimation(worksRef);
-    }
   },
   methods: {
     initScrolltrigger() {
@@ -658,7 +646,7 @@ export default {
 
             if (isScrollForward) {
               if (snapDifference > window.innerWidth * 0.5) {
-                this.width > 768 && self.scroll(self.end);
+                window.innerWidth > 768 && self.scroll(self.end);
                 isScrollForward = false;
               }
             }
@@ -673,7 +661,8 @@ export default {
               const differenceEndStart = self.end - self.start;
               const snapDeduction = snapProgress * differenceEndStart;
 
-              this.width > 768 && self.scroll(self.end - (snapDeduction + 2));
+              window.innerWidth > 768 &&
+                self.scroll(self.end - (snapDeduction + 2));
 
               setTimeout(() => {
                 isScrollForward = true;
@@ -735,7 +724,6 @@ export default {
 
       ScrollTrigger.addEventListener("refresh", () => {
         this.$nuxt.$emit("update-locomotive");
-        this.width = window.innerWidth;
       });
 
       ScrollTrigger.refresh();
