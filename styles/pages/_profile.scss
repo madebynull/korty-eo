@@ -413,6 +413,12 @@
                 width: 100%;
                 margin-left: auto;
 
+                .cta-button {
+                  outline: none;
+                  border: none;
+                  background: transparent;
+                }
+
                 .c-link {
                   transform: rotate(90deg);
                 }

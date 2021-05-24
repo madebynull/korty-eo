@@ -164,7 +164,9 @@
                   content producer and now filmmaker.
                 </p>
                 <div class="intro__cta">
-                  <animated-arrow />
+                  <button class="cta-button">
+                    <animated-arrow />
+                  </button>
                   <p>Here are some featured projects, Keep scrolling to see.</p>
                 </div>
               </div>
@@ -510,8 +512,9 @@ import AnimatedLink from "../components/AnimatedLink/AnimatedLink.vue";
 import Arrow from "../components/Arrow.vue";
 import CircularLink from "../components/CircularLink/CircularLink.vue";
 import AnimatedArrow from "../components/AnimatedArrow.vue";
+import { ScrollToPlugin } from "gsap/all";
 
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
 export default {
   components: { AnimatedLink, Arrow, CircularLink, AnimatedArrow },
@@ -622,10 +625,12 @@ export default {
         // scaleSetter = gsap.quickSetter(".scaleEl", "scaleY"),
         clamp = gsap.utils.clamp(-30, 30);
       // scaleClamp = gsap.utils.clamp(0.95, 1.1);
-      let timeline = gsap.timeline();
+      const timeline = gsap.timeline();
       const coachellaDesc = document.querySelector(".coachella__desc");
+      const ctaButton = document.querySelector(".cta-button");
+      const workSection = document.querySelector(".work__companies");
 
-      gsap.to(container, {
+      const anim = gsap.to(container, {
         x: () => {
           return -(container.scrollWidth - innerWidth);
         },
@@ -639,14 +644,15 @@ export default {
           scrub: 1,
 
           end: () => "+=" + (container.offsetWidth + innerWidth),
-          onUpdate: self => {
+
+          onUpdate(self) {
             let skew = clamp(self.getVelocity() / -230);
             // const bounce = scaleClamp(
             //   1 - Math.abs((self.getVelocity() / -300) * 0.25)
             // );
             // console.log(coachellaDesc.parentNode.offsetLeft);
+            // console.log(self.scroll());
             const direction = self.direction;
-
             const snapDifference =
               self.progress * self.end - (self.end - window.innerWidth);
 
@@ -692,9 +698,15 @@ export default {
           // markers: true
         }
       });
-      // console.log(anim.);
+      const self = anim.scrollTrigger;
+      ctaButton.addEventListener("click", () => {
+        const snapProgress =
+          window.innerWidth / (container.scrollWidth - window.innerWidth);
+        const differenceEndStart = self.end - self.start;
+        const snapDeduction = snapProgress * differenceEndStart;
 
-      // console.log();
+        self.scroll(self.start + snapDeduction);
+      });
 
       timeline.to(coachellaDesc, {
         rotate: "2deg",
