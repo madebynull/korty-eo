@@ -54,9 +54,17 @@
           </div>
           <div class="archive__images">
             <div class="c-image sm">
-              <img
+              <!-- <img
+                data-scroll
+                data-scroll-speed="-0.8"
                 src="https://res.cloudinary.com/dmwfd0zhh/image/upload/q_auto,f_auto/v1621921592/Korty/Rectangle_34_faqgls.jpg"
                 alt=""
+              /> -->
+              <div
+                data-scroll
+                data-scroll-speed="-0.8"
+                class="bg-image"
+                style="background-image: url(https://res.cloudinary.com/dmwfd0zhh/image/upload/q_auto,f_auto/v1621921592/Korty/Rectangle_34_faqgls.jpg);"
               />
             </div>
 

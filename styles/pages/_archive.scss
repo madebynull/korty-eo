@@ -84,6 +84,15 @@
           flex: 0 0 auto;
           height: 100%;
           margin-right: 56px;
+          overflow: hidden;
+
+          .bg-image {
+            background-size: cover;
+            background-position: 50% 0;
+            background-repeat: no-repeat;
+            height: 100%;
+            width: calc(100% + 7vw);
+          }
 
           &.lg {
           }
@@ -101,6 +110,7 @@
 
           img {
             height: 100%;
+            width: calc(100% + 10vw);
           }
         }
       }
