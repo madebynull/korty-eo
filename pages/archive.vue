@@ -15,11 +15,20 @@
     <LocomotiveScroll
       ref="scroller"
       :getted-options="{
-        direction: 'horizontal'
+        direction: 'horizontal',
+        smooth: true,
+        getSpeed: true,
+        lerp: 0.08,
+        smartphone: {
+          smooth: true
+        },
+        tablet: {
+          smooth: true
+        }
         // Other options
       }"
     >
-      <div class="c-archive__main">
+      <div class="c-archive__main" ref="horizontalMain">
         <div>
           <div class="archive__intro">
             <p>
@@ -43,7 +52,21 @@
               </div>
             </button>
           </div>
-          <div class="archive__images"></div>
+          <div class="archive__images">
+            <div class="c-image sm">
+              <img
+                src="https://res.cloudinary.com/dmwfd0zhh/image/upload/q_auto,f_auto/v1621921592/Korty/Rectangle_34_faqgls.jpg"
+                alt=""
+              />
+            </div>
+
+            <div class="c-image xs">
+              <img
+                src="https://res.cloudinary.com/dmwfd0zhh/image/upload/q_auto,f_auto/v1621921598/Korty/Rectangle_25_wygie2.jpg"
+                alt=""
+              />
+            </div>
+          </div>
         </div>
       </div>
     </LocomotiveScroll>
@@ -54,7 +77,14 @@
 import AnimatedArrow from "../components/AnimatedArrow.vue";
 import AnimatedLink from "../components/AnimatedLink/AnimatedLink.vue";
 export default {
-  components: { AnimatedArrow, AnimatedLink }
+  components: { AnimatedArrow, AnimatedLink },
+  mounted() {
+    const mainRef = this.$refs.horizontalMain;
+    const scrollWidth = mainRef.scrollWidth;
+    mainRef.style.width = scrollWidth;
+
+    this.$nuxt.$emit("update-locomotive");
+  }
 };
 </script>
 

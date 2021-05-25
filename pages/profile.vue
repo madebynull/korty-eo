@@ -2,8 +2,8 @@
   <LocomotiveScroll
     ref="scroller"
     :getted-options="{
-      smooth: true,
       direction: 'vertical',
+      smooth: true,
       getSpeed: true,
       lerp: 0.08,
       smartphone: {
@@ -694,7 +694,7 @@ export default {
         const differenceEndStart = self.end - self.start;
         const snapDeduction = snapProgress * differenceEndStart;
 
-        self.scroll(self.start + snapDeduction);
+        self.scroll(self.start + snapDeduction + 50);
       });
 
       timeline.to(coachellaDesc, {

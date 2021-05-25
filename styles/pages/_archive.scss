@@ -11,6 +11,9 @@
     width: 100%;
     height: 10vh;
     z-index: 2;
+    max-width: 1650px;
+    margin: 0 auto;
+    right: 0;
 
     @include media(">tablet") {
       // margin-bottom: 0px;
@@ -25,6 +28,7 @@
     padding-top: 30px;
     padding-bottom: 30px;
     height: 80vh;
+    width: 1651px;
 
     @media screen and (max-height: 700px) {
       padding-top: 10;
@@ -34,6 +38,8 @@
 
     > div {
       max-height: 800px;
+      display: flex;
+      width: 100%;
     }
 
     .archive {
@@ -41,8 +47,9 @@
         display: flex;
         flex-direction: column;
         width: 340px;
+        flex-shrink: 0;
         height: 100%;
-        margin-right: 171px;
+        margin-right: 151px;
 
         p {
           @include paragraph;
@@ -76,6 +83,25 @@
         > div {
           flex: 0 0 auto;
           height: 100%;
+          margin-right: 56px;
+
+          &.lg {
+          }
+
+          &.md {
+          }
+
+          &.sm {
+            width: 600px;
+          }
+
+          &.xs {
+            width: 400px;
+          }
+
+          img {
+            height: 100%;
+          }
         }
       }
     }
