@@ -64,7 +64,7 @@
                 data-scroll
                 data-scroll-speed="-0.8"
                 class="bg-image"
-                style="background-image: url(https://res.cloudinary.com/dmwfd0zhh/image/upload/q_auto,f_auto/v1621921592/Korty/Rectangle_34_faqgls.jpg);"
+                style="background-image: url(https://res.cloudinary.com/dmwfd0zhh/image/upload/q_auto,f_auto/v1621637709/Korty/korty-archive-1_kjvsf4.jpg);"
               />
             </div>
 
