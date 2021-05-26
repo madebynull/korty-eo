@@ -40,15 +40,25 @@
               Korty and her work, respective owners of each piece of work have
               been credited. Contact us for content removal
             </p>
+
+            <button class="credits-link show-mobile">
+              <div class="c-inner">
+                <animated-link class="c-bezier">
+                  credits
+                </animated-link>
+              </div>
+            </button>
+
             <h1>
               “I try not to do everything, but I make sure I try everything.”
             </h1>
-            <nuxt-link to="/" class="home-link show-desktop">
+            <nuxt-link to="/" class="home-link">
               <animated-link class="c-bezier">
                 Go to Home
               </animated-link>
             </nuxt-link>
-            <button class="credits-link">
+
+            <button class="credits-link show-desktop">
               <div class="c-inner">
                 <animated-link class="c-bezier">
                   credits
@@ -192,23 +202,166 @@
               />
             </div>
 
-            <!-- To cpoy -->
+            <div class="c-image xs">
+              <div
+                data-scroll
+                data-scroll-speed="-0.8"
+                class="bg-image"
+                style="background-image: url(https://res.cloudinary.com/dmwfd0zhh/image/upload/q_auto,f_auto/v1621921680/Korty/Rectangle_48_ybbj09.jpg);"
+              />
+            </div>
+
+            <div class="c-image xs">
+              <div
+                data-scroll
+                data-scroll-speed="-0.8"
+                class="bg-image"
+                style="background-image: url(https://res.cloudinary.com/dmwfd0zhh/image/upload/q_auto,f_auto/v1621921727/Korty/Rectangle_56_k6qgpk.jpg);"
+              />
+            </div>
+
+            <div class="c-image lg">
+              <div
+                data-scroll
+                data-scroll-speed="-0.8"
+                class="bg-image"
+                style="background-image: url(https://res.cloudinary.com/dmwfd0zhh/image/upload/q_auto,f_auto/v1621921640/Korty/Rectangle_49_taxh6a.jpg);"
+              />
+            </div>
+
+            <div class="c-image sm nobp">
+              <div
+                data-scroll
+                data-scroll-speed="-0.8"
+                class="bg-image"
+                style="background-image: url(https://res.cloudinary.com/dmwfd0zhh/image/upload/q_auto,f_auto/v1621921695/Korty/Rectangle_50_m3cic3.jpg);"
+              />
+            </div>
+
+            <div class="c-image xs nobp">
+              <div
+                data-scroll
+                data-scroll-speed="-0.8"
+                class="bg-image"
+                style="background-image: url(https://res.cloudinary.com/dmwfd0zhh/image/upload/q_auto,f_auto/v1621921794/Korty/Rectangle_51_mj4vqi.jpg);"
+              />
+            </div>
+
+            <div class="c-image xs">
+              <div
+                data-scroll
+                data-scroll-speed="-0.8"
+                class="bg-image"
+                style="background-image: url(https://res.cloudinary.com/dmwfd0zhh/image/upload/q_auto,f_auto/v1621921702/Korty/Rectangle_52_r0cnkm.jpg);"
+              />
+            </div>
+
+            <div class="c-image md">
+              <div
+                data-scroll
+                data-scroll-speed="-0.8"
+                class="bg-image"
+                style="background-image: url(https://res.cloudinary.com/dmwfd0zhh/image/upload/q_auto,f_auto/v1621921704/Korty/Rectangle_53_k2chip.jpg);"
+              />
+            </div>
+
+            <div class="c-image xs">
+              <div
+                data-scroll
+                data-scroll-speed="-0.8"
+                class="bg-image"
+                style="background-image: url(https://res.cloudinary.com/dmwfd0zhh/image/upload/q_auto,f_auto/v1621921770/Korty/Rectangle_54_r0rsvh.jpg);"
+              />
+            </div>
+
+            <!-- Copy Image -->
+
+            <div class="c-image md">
+              <div
+                data-scroll
+                data-scroll-speed="-0.8"
+                class="bg-image"
+                style="background-image: url(https://res.cloudinary.com/dmwfd0zhh/image/upload/q_auto,f_auto/v1621921773/Korty/Rectangle_57_twgrjb.jpg);"
+              />
+            </div>
+
+            <div class="c-image xs">
+              <div
+                data-scroll
+                data-scroll-speed="-0.8"
+                class="bg-image"
+                style="background-image: url(https://res.cloudinary.com/dmwfd0zhh/image/upload/q_auto,f_auto/v1621921708/Korty/Rectangle_55_eequ72.jpg);"
+              />
+            </div>
+
+            <div class="c-image xs">
+              <div
+                data-scroll
+                data-scroll-speed="-0.8"
+                class="bg-image"
+                style="background-image: url(https://res.cloudinary.com/dmwfd0zhh/image/upload/q_auto,f_auto/v1621921722/Korty/Rectangle_58_kiisqn.jpg);"
+              />
+            </div>
+
+            <div class="c-image xs">
+              <div
+                data-scroll
+                data-scroll-speed="-0.8"
+                class="bg-image"
+                style="background-image: url(https://res.cloudinary.com/dmwfd0zhh/image/upload/q_auto,f_auto/v1621921759/Korty/Rectangle_59_tjr5nx.jpg);"
+              />
+            </div>
 
             <div class="c-image sm">
               <div
                 data-scroll
                 data-scroll-speed="-0.8"
                 class="bg-image"
-                style="background-image: url(https://res.cloudinary.com/dmwfd0zhh/image/upload/q_auto,f_auto/v1621921644/Korty/Rectangle_47_nesabh.jpg);"
+                style="background-image: url(https://res.cloudinary.com/dmwfd0zhh/image/upload/q_auto,f_auto/v1621921782/Korty/Rectangle_60_bwxjnj.jpg);"
               />
             </div>
 
-            <div class="c-image">
+            <div class="c-image lg">
               <div
                 data-scroll
                 data-scroll-speed="-0.8"
                 class="bg-image"
-                style="background-image: url();"
+                style="background-image: url(https://res.cloudinary.com/dmwfd0zhh/image/upload/q_auto,f_auto/v1621921812/Korty/Rectangle_61_hgeq0v.jpg);"
+              />
+            </div>
+
+            <div class="c-image lg">
+              <div
+                data-scroll
+                data-scroll-speed="-0.8"
+                class="bg-image"
+                style="background-image: url(https://res.cloudinary.com/dmwfd0zhh/image/upload/q_auto,f_auto/v1621921816/Korty/Rectangle_62_zkkzof.jpg);"
+              />
+            </div>
+
+            <div class="c-circle">
+              <div class="c-circle__inner">
+                <div class="heading">
+                  <h3>
+                    the <br />
+                    End
+                  </h3>
+                </div>
+
+                <nuxt-link to="/" class="home-link">
+                  <animated-link class="c-bezier">
+                    Go to Home
+                  </animated-link>
+                </nuxt-link>
+              </div>
+            </div>
+
+            <div class="c-image xs">
+              <div
+                data-scroll
+                data-scroll-speed="-0.8"
+                class="bg-image"
+                style="background-image: url(https://res.cloudinary.com/dmwfd0zhh/image/upload/q_auto,f_auto/v1621921814/Korty/Rectangle_64_v1mfrj.jpg);"
               />
             </div>
           </div>
