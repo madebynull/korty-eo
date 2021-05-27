@@ -6,10 +6,14 @@
         <span class="percentages">
           <div class="fake-zero">0</div>
           <span class="p-inner">
-            <span>000</span>
+            <span class="hide-first">000</span>
             <span
-              class="subsequent"
               v-for="(percentage, index) in numbersArr"
+              :class="
+                `subsequent ${
+                  index + 1 < numbersArr.length ? 'hide-first' : ''
+                }`
+              "
               :key="index"
               :style="`top: ${(index + 1) * 100}%`"
             >

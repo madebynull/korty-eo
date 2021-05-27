@@ -29,7 +29,6 @@
 
       .fake-zero {
         position: absolute;
-        background: #000000;
         z-index: 10;
       }
 
@@ -41,6 +40,12 @@
 
       .subsequent {
         position: absolute;
+      }
+
+      .hide-first {
+        &::first-letter {
+          opacity: 0;
+        }
       }
     }
   }
