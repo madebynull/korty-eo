@@ -10,7 +10,7 @@
 
 <script>
 import gsap from "gsap/all";
-import { mapState, mapGetters } from "vuex";
+import { mapState } from "vuex";
 import Modal from "../components/Modal/Modal.vue";
 import Preloader from "../components/Preloader.vue";
 export default {
@@ -20,6 +20,7 @@ export default {
   },
   methods: {
     leave(el, done) {
+      console.log("opacity");
       const timeline = gsap.timeline({
         onComplete: done
       });

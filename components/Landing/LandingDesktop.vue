@@ -46,7 +46,7 @@
           <div>
             <hover-link
               label="VLOGS + INTERVIEWS"
-              assetUrl="https://res.cloudinary.com/dmwfd0zhh/image/upload/q_auto,f_auto/v1620697813/Korty/image_2_gijibv.jpg"
+              assetUrl="https://res.cloudinary.com/dmwfd0zhh/video/upload/q_auto,f_auto/v1620859386/Korty/YT_n9yqbh.mp4"
               href="/"
             >
               <sup class="c-hoverlink__super">01</sup>
@@ -61,8 +61,8 @@
         <div class="c-hoverlink hover-link-2">
           <div>
             <hover-link
-              label="VLOGS + INTERVIEWS"
-              assetUrl="https://res.cloudinary.com/dmwfd0zhh/image/upload/q_auto,f_auto/v1620697813/Korty/image_2_gijibv.jpg"
+              label="Video Mashups"
+              assetUrl="https://res.cloudinary.com/dmwfd0zhh/video/upload/q_auto,f_auto/v1622155232/Korty/IG_rwtt50.mp4"
               href="/"
             >
               <sup class="c-hoverlink__super">02</sup>
@@ -90,8 +90,8 @@
           </div>
           <div>
             <hover-link
-              label="VLOGS + INTERVIEWS"
-              assetUrl="https://res.cloudinary.com/dmwfd0zhh/image/upload/q_auto,f_auto/v1620697813/Korty/image_2_gijibv.jpg"
+              label="Modelling"
+              assetUrl="https://res.cloudinary.com/dmwfd0zhh/video/upload/v1622155206/Korty/YT_model_wpxhbg.mp4"
               href="/"
             >
               <sup class="c-hoverlink__super">03</sup>

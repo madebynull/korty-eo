@@ -6,7 +6,7 @@
     <div class="hover-reveal">
       <div class="hover-reveal__inner">
         <video
-          src="https://res.cloudinary.com/dmwfd0zhh/video/upload/q_auto,f_auto/v1620859386/Korty/YT_n9yqbh.mp4"
+          :src="assetUrl"
           class="hover-reveal__video"
           autoplay
           preload="auto"
