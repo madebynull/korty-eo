@@ -41,7 +41,7 @@
               been credited. Contact us for content removal
             </p>
 
-            <button class="credits-link show-mobile">
+            <button class="credits-link show-mobile" @click="openModal">
               <div class="c-inner">
                 <animated-link class="c-bezier">
                   credits
@@ -58,7 +58,7 @@
               </animated-link>
             </nuxt-link>
 
-            <button class="credits-link show-desktop">
+            <button class="credits-link show-desktop" @click="openModal">
               <div class="c-inner">
                 <animated-link class="c-bezier">
                   credits
@@ -410,6 +410,11 @@ export default {
       );
     });
     locomotive.update();
+  },
+  methods: {
+    openModal() {
+      this.$store.commit("updateModal", true);
+    }
   }
 };
 </script>

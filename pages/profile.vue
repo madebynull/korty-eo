@@ -430,7 +430,7 @@
       <div class="c-profile__footer">
         <div class="inner-con">
           <div class="footer__left show-desktop">
-            <button class="credits-link">
+            <button class="credits-link" @click="openModal">
               <div class="c-inner">
                 <animated-link class="c-bezier">
                   credits
@@ -530,6 +530,9 @@ export default {
     this.$nuxt.$emit("update-locomotive");
   },
   methods: {
+    openModal() {
+      this.$store.commit("updateModal", true);
+    },
     initScrolltrigger() {
       const locomotive = this.$refs.scroller.locomotive;
       locomotive.on("scroll", ScrollTrigger.update);
