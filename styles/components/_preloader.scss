@@ -1,0 +1,47 @@
+.c-preloader {
+  position: fixed;
+  background: #000000;
+  height: 100vh;
+  bottom: 0;
+  left: 0;
+  // top: 0;
+  width: 100%;
+  z-index: 20;
+  @include padding;
+  overflow: hidden;
+  @include flex(center, center);
+
+  &__inner {
+    height: 100%;
+    width: 100%;
+    @include flex(center, center);
+
+    h1 {
+      @include heading-1;
+      // font-style: italic;
+      color: #ffffff;
+      .percentages {
+        display: inline-flex;
+        align-items: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .fake-zero {
+        position: absolute;
+        background: #000000;
+        z-index: 10;
+      }
+
+      .p-inner {
+        display: flex;
+        margin-right: 20px;
+        will-change: transform;
+      }
+
+      .subsequent {
+        position: absolute;
+      }
+    }
+  }
+}

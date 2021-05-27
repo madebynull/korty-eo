@@ -71,21 +71,7 @@ import { mapState, mapGetters } from "vuex";
 import AnimatedLink from "../AnimatedLink/AnimatedLink.vue";
 export default {
   components: { AnimatedLink },
-  // transition: {
-  //   name: "modal",
-  //   css: false,
-  //   beforeEnter(el) {
-  //     gsap.set(el, {
-  //       opacity: 0
-  //     });
-  //   },
-  //   enter(el) {
-  //     gsap.to(el, {
-  //       opacity: 1,
-  //       duration: 2
-  //     });
-  //   }
-  // },
+
   computed: {
     ...mapState(["modalOpen", "imagesLoaded"])
   },

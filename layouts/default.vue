@@ -1,6 +1,7 @@
 <template>
   <div class="c-app">
-    <Nuxt />
+    <Nuxt v-if="imagesLoaded" />
+    <proloader v-else />
     <modal />
   </div>
 </template>
@@ -8,8 +9,9 @@
 <script>
 import { mapState, mapGetters } from "vuex";
 import Modal from "../components/Modal/Modal.vue";
+import Proloader from "../components/Preloader.vue";
 export default {
-  components: { Modal },
+  components: { Modal, Proloader },
   computed: {
     ...mapState(["modalOpen", "imagesLoaded"])
   }
