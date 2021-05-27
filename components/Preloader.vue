@@ -1,27 +1,48 @@
 <template>
   <div class="c-preloader" ref="preloader">
     <div class="c-preloader__inner">
-      <button @click="closeLoader">Close</button>
-      <h1 class="fraunces">
-        <span class="percentages">
-          <div class="fake-zero">0</div>
-          <span class="p-inner">
-            <span class="hide-first">000</span>
-            <span
-              v-for="(percentage, index) in numbersArr"
-              :class="
-                `subsequent ${
-                  index + 1 < numbersArr.length ? 'hide-first' : ''
-                }`
-              "
-              :key="index"
-              :style="`top: ${(index + 1) * 100}%`"
-            >
-              {{ percentage }}
+      <!-- <button @click="closeLoader">Close</button> -->
+      <div>
+        <div class="percentages__container">
+          <h1 class="fraunces">
+            <span class="percentages">
+              <div class="mark">
+                ‘
+              </div>
+              <div class="fake-zero">0</div>
+              <span class="p-inner">
+                <span class="hide-first">000</span>
+                <span
+                  v-for="(percentage, index) in numbersArr"
+                  :class="
+                    `subsequent ${
+                      index + 1 < numbersArr.length ? 'hide-first' : ''
+                    }`
+                  "
+                  :key="index"
+                  :style="`top: ${(index + 1) * 100}%`"
+                >
+                  {{ percentage }}
+                </span>
+              </span>
             </span>
-          </span>
-        </span>
-      </h1>
+          </h1>
+        </div>
+
+        <div class="preloader-images">
+          <div class="image-con con-1">
+            <div class="image-1 image" />
+          </div>
+
+          <div class="image-con con-2">
+            <div class="image-2 image" />
+          </div>
+        </div>
+      </div>
+      <h3 class="c-preloader__footer">
+        KORTY <br />
+        ENIOLA
+      </h3>
     </div>
   </div>
 </template>
@@ -101,7 +122,7 @@ export default {
   },
   watch: {
     percentageLoaded(newValue, oldValue) {
-      // console.log(newValue, oldValue);
+      console.log(newValue, oldValue);
     }
   },
   methods: {
@@ -124,29 +145,74 @@ export default {
       });
 
       await Promise.all(
-        this.toBePreloaded.map(async image => {
+        this.toBePreloaded.map(async (image, index) => {
           await preloadImage(image);
           loadedCount++;
           const percentage = Math.floor((100 / totalImages) * loadedCount);
           this.percentageLoaded = percentage;
           gsap.to(".p-inner", {
-            yPercent: -(loadedCount * 100),
+            yPercent: -Math.min(loadedCount * 100, (loadedCount - 2) * 100),
             duration: totalImages / 5,
             onComplete: () => {
               if (percentage !== 100) return;
-              // this.$store.commit("updateImagesLoaded", true);
+              const tl = gsap.timeline({
+                onComplete: () => {
+                  this.$store.commit("updateImagesLoaded", true);
+                }
+              });
+              tl.to(".fake-zero", {
+                yPercent: -100,
+                duration: 1
+              })
+                .to(
+                  ".p-inner",
+                  {
+                    duration: 1,
+                    yPercent: -(loadedCount * 100)
+                  },
+                  "-=1"
+                )
+                .set(".preloader-images .con-2", { autoAlpha: 1 });
+              tl.from(".preloader-images .con-2", {
+                duration: 1.5,
+                yPercent: 100,
+                ease: "Expo.easeInOut"
+              })
+                .from(".preloader-images .image-2", {
+                  duration: 1.5,
+                  yPercent: -100,
+                  delay: -1.5,
+                  ease: "Expo.easeInOut"
+                })
+                .set(".preloader-images .con-1", { autoAlpha: 1 })
+                .set(".percentages__container", { opacity: 0 })
+                .to(".preloader-images .con-2", {
+                  duration: 1.5,
+                  yPercent: -100,
+                  ease: "Expo.easeInOut"
+                })
+                .to(".preloader-images .image-2", {
+                  duration: 1.5,
+                  yPercent: 100,
+                  delay: -1.5,
+                  ease: "Expo.easeInOut"
+                })
+                .to(".preloader-images .con-1", {
+                  duration: 1.5,
+                  yPercent: -100,
+                  ease: "Expo.easeInOut"
+                })
+                .to(".preloader-images .image-1", {
+                  duration: 1.5,
+                  yPercent: 100,
+                  delay: -1.5,
+                  ease: "Expo.easeInOut"
+                })
+                .to(".c-preloader__footer", {
+                  opacity: 0,
+                  delay: -1
+                });
             }
-          });
-
-          gsap.set(".fake-zero", {
-            background: "transparent",
-            delay: totalImages / 5 - 0.8
-          });
-
-          gsap.to(".fake-zero", {
-            yPercent: -100,
-            duration: 1,
-            delay: totalImages / 5 - 0.5
           });
         })
       );

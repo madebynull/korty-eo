@@ -7,7 +7,6 @@
   // top: 0;
   width: 100%;
   z-index: 20;
-  @include padding;
   overflow: hidden;
   @include flex(center, center);
 
@@ -15,10 +14,76 @@
     height: 100%;
     width: 100%;
     @include flex(center, center);
+    position: relative;
+    @include padding;
+
+    > div {
+      display: grid;
+      width: 100%;
+      max-width: 382px;
+      height: 490px;
+
+      @include media(">phone") {
+      }
+
+      > div {
+        grid-area: 1/1;
+      }
+
+      .percentages__container {
+        @include flex(center, center);
+      }
+
+      .preloader-images {
+        position: relative;
+        bottom: 0;
+        display: grid;
+        z-index: 2;
+        // height: 0;
+
+        .con-1 {
+          opacity: 0;
+        }
+
+        .con-2 {
+          opacity: 0;
+          z-index: 2;
+        }
+
+        .image-con {
+          grid-area: 1/1;
+          width: 100%;
+          height: 100%;
+          position: relative;
+          overflow: hidden;
+
+          .image {
+            width: 100%;
+            height: 100%;
+          }
+        }
+
+        .image-1 {
+          background-image: url("https://res.cloudinary.com/dmwfd0zhh/image/upload/q_auto,f_auto/v1621637709/Korty/korty-archive-1_kjvsf4.jpg");
+          background-size: cover;
+          background-position: 50% 50%;
+          z-index: 1;
+          bottom: 0;
+          top: unset;
+        }
+
+        .image-2 {
+          background-image: url("https://res.cloudinary.com/dmwfd0zhh/image/upload/q_auto,f_auto/v1621921727/Korty/Rectangle_56_k6qgpk.jpg");
+          background-size: cover;
+          background-position: 50% 0%;
+        }
+      }
+    }
 
     h1 {
-      @include heading-1;
-      // font-style: italic;
+      @include heading-2;
+      font-weight: 400;
+      font-style: italic;
       color: #ffffff;
       .percentages {
         display: inline-flex;
@@ -27,14 +92,18 @@
         overflow: hidden;
       }
 
+      .mark {
+        position: absolute;
+        left: -11px;
+      }
+
       .fake-zero {
         position: absolute;
-        z-index: 10;
+        z-index: 1;
       }
 
       .p-inner {
         display: flex;
-        margin-right: 20px;
         will-change: transform;
       }
 
@@ -43,10 +112,19 @@
       }
 
       .hide-first {
+        letter-spacing: normal;
         &::first-letter {
           opacity: 0;
         }
       }
     }
+  }
+
+  &__footer {
+    @include heading-3;
+    color: #ffffff;
+    position: absolute;
+    left: 64px;
+    bottom: 105px;
   }
 }
