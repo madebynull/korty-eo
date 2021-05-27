@@ -20,10 +20,12 @@
     > div {
       display: grid;
       width: 100%;
-      max-width: 382px;
-      height: 490px;
+      max-width: 340px;
+      height: 380px;
 
       @include media(">phone") {
+        max-width: 382px;
+        height: 490px;
       }
 
       > div {
@@ -89,12 +91,19 @@
         display: inline-flex;
         align-items: center;
         position: relative;
-        overflow: hidden;
+        overflow-y: hidden;
+        overflow-x: visible;
+        padding-left: 20px;
+        margin-left: -20px;
       }
 
       .mark {
         position: absolute;
-        left: -11px;
+        left: 9px;
+
+        @include media(">tablet") {
+          left: 5px;
+        }
       }
 
       .fake-zero {
@@ -124,7 +133,12 @@
     @include heading-3;
     color: #ffffff;
     position: absolute;
-    left: 64px;
-    bottom: 105px;
+    left: 32px;
+    bottom: 32px;
+
+    @include media(">phone") {
+      left: 64px;
+      bottom: 105px;
+    }
   }
 }
