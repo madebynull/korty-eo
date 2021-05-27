@@ -122,7 +122,7 @@
         </nuxt-link>
       </div>
       <div class="c-credits">
-        <button class="credits-link">
+        <button class="credits-link" @click="openModal">
           <div class="c-inner">
             credits
           </div>
@@ -144,8 +144,8 @@ export default {
   components: { AnimatedLink },
   mounted() {
     this.initScrolltrigger();
-    const elements = document.querySelectorAll(".scroll-in");
-    elements.forEach(element => this.elementAnimation(element));
+    // const elements = document.querySelectorAll(".scroll-in");
+    // elements.forEach(element => this.elementAnimation(element));
   },
   methods: {
     initScrolltrigger() {
@@ -168,18 +168,8 @@ export default {
       });
     },
 
-    elementAnimation(element) {
-      gsap.from(element, {
-        scrollTrigger: {
-          trigger: element,
-          scroller: this.$refs.scroller.locomotive.el,
-          scrub: true,
-          start: "top bottom",
-          end: "bottom center"
-        },
-        y: 40,
-        ease: "none"
-      });
+    openModal() {
+      this.$store.commit("updateModal", true);
     }
   }
 };

@@ -479,7 +479,7 @@
                   continue the experience, head over to the archive page.
                 </p>
 
-                <button class="credits-link">
+                <button class="credits-link" @click="openModal">
                   <div class="c-inner">
                     <animated-link class="c-bezier">
                       credits

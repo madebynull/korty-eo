@@ -29,7 +29,7 @@
           </p>
         </div>
 
-        <button class="credits-link">
+        <button class="credits-link" @click="openModal">
           <div class="c-inner">
             <AnimatedLink class="c-bezier">
               credits
@@ -115,7 +115,12 @@
 import CircularLink from "../CircularLink/CircularLink.vue";
 import HoverLink from "../HoverLink/HoverLink.vue";
 export default {
-  components: { CircularLink, HoverLink }
+  components: { CircularLink, HoverLink },
+  methods: {
+    openModal() {
+      this.$store.commit("updateModal", true);
+    }
+  }
 };
 </script>
 
