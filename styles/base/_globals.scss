@@ -63,7 +63,8 @@ p {
   position: relative;
 
   &-label {
-    mix-blend-mode: overlay;
+    mix-blend-mode: difference;
+    // color: $col-cream;
   }
 }
 

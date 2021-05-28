@@ -122,7 +122,7 @@ export default {
   },
   watch: {
     percentageLoaded(newValue, oldValue) {
-      console.log(newValue, oldValue);
+      // console.log(newValue, oldValue);
     }
   },
   methods: {
@@ -148,11 +148,16 @@ export default {
         this.toBePreloaded.map(async (image, index) => {
           await preloadImage(image);
           loadedCount++;
+          let tween = null;
+          // console.log(1 - loadedCount / totalImages);
           const percentage = Math.floor((100 / totalImages) * loadedCount);
           this.percentageLoaded = percentage;
-          gsap.to(".p-inner", {
+          tween && tween.kill();
+
+          tween = gsap.to(".p-inner", {
             yPercent: -Math.min(loadedCount * 100, (loadedCount - 2) * 100),
-            duration: totalImages / 5,
+            duration: 15,
+            ease: "none",
             onComplete: () => {
               if (percentage !== 100) return;
               const tl = gsap.timeline({
@@ -214,6 +219,8 @@ export default {
                 });
             }
           });
+
+          console.log(tween.duration());
         })
       );
     },
