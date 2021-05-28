@@ -39,10 +39,12 @@
             />
           </div>
           <div class="hero-content">
-            <h1 class="hero-content__title">
-              K<span class="fraunces">o</span>rty e<span class="fraunces"
-                >o.</span
-              >
+            <h1 class="hero-content__title span-overflow">
+              <span class="ov-inner">
+                K<span class="fraunces">o</span>rty e<span class="fraunces"
+                  >o.</span
+                >
+              </span>
             </h1>
             <div class="hero-content__caption">
               <p>Korty EO.</p>
@@ -544,15 +546,25 @@ export default {
       tl.to(el, {
         opacity: 1,
         duration: 2
-      }).from(
-        ".hero__image img",
-        {
-          duration: 1,
-          scale: 1.2,
-          ease: "power2.out"
-        },
-        "-=2"
-      );
+      })
+        .from(
+          ".hero__image img",
+          {
+            duration: 1,
+            scale: 1.2,
+            ease: "power2.out"
+          },
+          "-=2"
+        )
+        .from(
+          ".span-overflow .ov-inner",
+          {
+            yPercent: 100,
+            duration: 1,
+            ease: "power2.out"
+          },
+          "-=2"
+        );
     },
     beforeLeave(el) {
       gsap.set(".c-exit", {
