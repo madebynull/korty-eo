@@ -52,16 +52,19 @@
         </div>
 
         <div class="c-job">
-          <h2 class="c-job__title align-right ml-auto">
-            <a href="https://www.youtube.com/results?search_query=korty+eo">
+          <a
+            href="https://www.youtube.com/results?search_query=korty+eo"
+            target="_blank"
+          >
+            <h2 class="c-job__title align-right ml-auto">
               <span
                 >VL<span class="fraunces">O</span>GS
                 <span class="fraunces">+</span></span
               >
-            </a>
-            <br />
-            INTERVIEWS
-          </h2>
+              <br />
+              INTERVIEWS
+            </h2>
+          </a>
           <div class="c-job__video">
             <video
               src="https://res.cloudinary.com/dmwfd0zhh/video/upload/q_auto,f_auto/v1620859386/Korty/YT_n9yqbh.mp4"
