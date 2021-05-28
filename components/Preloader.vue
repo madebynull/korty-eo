@@ -151,15 +151,13 @@ export default {
         this.toBePreloaded.map(async (image, index) => {
           await preloadImage(image);
           loadedCount++;
-          let tween = null;
           // console.log(1 - loadedCount / totalImages);
           const percentage = Math.floor((100 / totalImages) * loadedCount);
           this.percentageLoaded = percentage;
-          tween && tween.kill();
 
-          tween = gsap.to(".p-inner", {
+          gsap.to(".p-inner", {
             yPercent: -Math.min(loadedCount * 100, (loadedCount - 2) * 100),
-            duration: 5,
+            duration: 4.5,
             ease: "none",
             onComplete: () => {
               if (percentage !== 100) return;
