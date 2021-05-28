@@ -5,6 +5,7 @@
       <preloader v-if="!imagesLoaded" />
     </transition>
     <modal />
+    <exit />
   </div>
 </template>
 
@@ -13,8 +14,9 @@ import gsap from "gsap/all";
 import { mapState } from "vuex";
 import Modal from "../components/Modal/Modal.vue";
 import Preloader from "../components/Preloader.vue";
+import Exit from "../components/Exit.vue";
 export default {
-  components: { Modal, Preloader },
+  components: { Modal, Preloader, Exit },
   computed: {
     ...mapState(["modalOpen", "imagesLoaded"])
   },

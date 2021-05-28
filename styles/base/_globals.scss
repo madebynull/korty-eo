@@ -166,3 +166,28 @@ p {
 .ov-h {
   overflow: hidden;
 }
+
+.c-exit {
+  position: fixed;
+  background: #000000;
+  height: 100vh;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: -10;
+  height: 0;
+  overflow: hidden;
+  @include flex(center, center);
+
+  h1 {
+    @include heading-2;
+    letter-spacing: -0.1em;
+    color: #ffffff;
+    padding-right: 10px;
+    margin-right: -10px;
+  }
+
+  span {
+    display: inline-block;
+  }
+}

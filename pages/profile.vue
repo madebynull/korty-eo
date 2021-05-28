@@ -532,20 +532,75 @@ export default {
     appear: true,
     beforeEnter(el) {
       console.log(el);
-      // gsap.set(el, {
-      //   opacity: 0
-      // });
-      // console.log("before enter");
+      gsap.set(el, {
+        opacity: 0
+      });
+      console.log("before enter");
     },
     enter(el, done) {
-      // console.log("entering");
-      // const tl = gsap.timeline({
-      //   onComplete: done
-      // });
-      // tl.to(el, {
-      //   opacity: 1,
-      //   duration: 2
-      // });
+      console.log("entering");
+      const tl = gsap.timeline({
+        onComplete: done
+      });
+      tl.to(el, {
+        opacity: 1,
+        duration: 2
+      });
+    },
+    beforeLeave(el) {
+      gsap.set(".c-exit", {
+        zIndex: 30,
+        top: "unset",
+        bottom: 0
+      });
+      gsap.set(".exit-span", {
+        opacity: 1
+      });
+    },
+    leave(el, done) {
+      const tl = gsap.timeline({
+        onComplete: done
+      });
+
+      tl.to(".c-exit", {
+        height: window.innerHeight,
+        duration: 1.5,
+        ease: "Expo.easeInOut"
+      })
+        .set(".c-exit", {
+          top: 0,
+          bottom: "unset"
+        })
+        .from(
+          ".exit-span",
+          {
+            yPercent: 100,
+            duration: 1,
+            skewY: 20,
+            stagger: {
+              amount: 0.1
+            },
+            ease: "power2.out"
+          },
+          "-=.5"
+        )
+        .set(el, {
+          opacity: 0
+        })
+        .to(".exit-span", {
+          opacity: 0,
+          duration: 1,
+          ease: "power2.out"
+        })
+        .to(
+          ".c-exit",
+          {
+            height: 0,
+            duration: 1.5,
+            ease: "Expo.easeInOut"
+          },
+          "-=.5"
+        );
     }
   },
   components: { AnimatedLink, Arrow, CircularLink, AnimatedArrow },
