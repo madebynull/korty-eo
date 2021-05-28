@@ -79,6 +79,16 @@ export default {
             ease: "power2.out"
           },
           "-=1"
+        )
+        .from(
+          ".hero-image .c-image",
+          {
+            duration: 1,
+            opacity: 0,
+            scale: 1.5,
+            ease: "power2.out"
+          },
+          "-=1"
         );
     },
     beforeLeave(el) {

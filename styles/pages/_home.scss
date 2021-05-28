@@ -62,14 +62,9 @@
         grid-column-end: 12;
         grid-row: span 11;
         display: grid;
+        overflow: hidden;
         > div {
           grid-area: 1 / 1;
-        }
-
-        .image-mask {
-          position: relative;
-          z-index: 1;
-          // background: $col-cream;
         }
 
         .c-image {
