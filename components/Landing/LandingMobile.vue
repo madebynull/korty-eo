@@ -19,26 +19,35 @@
     </div>
     <div class="c-landing__mobile">
       <div class="c-intro">
-        <div class="c-intro__image">
+        <div class="c-intro__image c-name__image ov-h">
           <img
             src="https://res.cloudinary.com/dmwfd0zhh/image/upload/q_auto,f_auto/v1620697813/Korty/image_20_bufuoi.jpg"
             alt=""
+            class="inner"
           />
         </div>
 
         <div class="c-intro__details">
-          <h1 class="details-title">korty_eo</h1>
-          <p class="details-jd">
-            FILMAKER & <br />
-            YOUTUBER
+          <h1 class="details-title span-overflow" style="margin-bottom: 12px;">
+            <span class="ov-inner">
+              korty_eo
+            </span>
+          </h1>
+          <p class="details-jd span-overflow">
+            <span class="ov-inner">
+              FILMAKER & <br />
+              YOUTUBER
+            </span>
           </p>
         </div>
       </div>
       <div class="c-jobs">
         <div class="c-desc">
-          <p>
-            Based in Lagos, Nigeria. Korty runs a youtube channel where she
-            posts -
+          <p class="span-overflow">
+            <span class="ov-inner">
+              Based in Lagos, Nigeria. Korty runs a youtube channel where she
+              posts -
+            </span>
           </p>
         </div>
 
@@ -54,7 +63,7 @@
           <div class="c-job__video">
             <video
               src="https://res.cloudinary.com/dmwfd0zhh/video/upload/q_auto,f_auto/v1620859386/Korty/YT_n9yqbh.mp4"
-              class="hover-reveal__video"
+              class="hover-reveal__video mobile"
               autoplay
               preload="auto"
               muted
@@ -82,8 +91,8 @@
           </div>
           <div class="c-job__video">
             <video
-              src="https://res.cloudinary.com/dmwfd0zhh/video/upload/q_auto,f_auto/v1620859386/Korty/YT_n9yqbh.mp4"
-              class="hover-reveal__video"
+              src="https://res.cloudinary.com/dmwfd0zhh/video/upload/q_auto,f_auto/v1622155232/Korty/IG_rwtt50.mp4"
+              class="hover-reveal__video mobile"
               autoplay
               preload="auto"
               muted

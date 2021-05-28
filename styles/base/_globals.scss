@@ -93,6 +93,16 @@ p {
 .hover-reveal__video {
   object-fit: cover;
   object-position: 50% 50%;
+
+  @include media("<=tablet") {
+    display: none;
+  }
+
+  &.mobile {
+    @include media("<=tablet") {
+      display: block;
+    }
+  }
 }
 
 .fraunces {

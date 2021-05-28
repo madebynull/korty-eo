@@ -12,6 +12,7 @@
           preload="auto"
           muted
           loop
+          playsinline
         />
       </div>
     </div>
