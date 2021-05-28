@@ -34,13 +34,13 @@ export default {
       });
       tl.to(el, {
         opacity: 1,
-        duration: 1
+        duration: 1.3
       })
         .from(
           ".span-overflow .ov-inner",
           {
             yPercent: 100,
-            duration: 0.8,
+            duration: 1,
             ease: "power2.out",
             stagger: {
               amount: 0.08
@@ -52,7 +52,7 @@ export default {
           ".link-overflow .ov-inner",
           {
             yPercent: 100,
-            duration: 0.8,
+            duration: 1,
             ease: "power2.out",
             stagger: {
               amount: 0.08
@@ -63,32 +63,32 @@ export default {
         .from(
           ".c-model__image img",
           {
-            duration: 1,
+            duration: 1.5,
             opacity: 0,
             scale: 1.5,
             ease: "power2.out"
           },
-          "-=1"
+          "-=1.5"
         )
         .from(
           ".c-name__image .inner",
           {
-            duration: 1,
+            duration: 1.5,
             opacity: 0,
             scale: 1.5,
             ease: "power2.out"
           },
-          "-=1"
+          "-=1.5"
         )
         .from(
           ".hero-image .c-image",
           {
-            duration: 1,
+            duration: 1.5,
             opacity: 0,
             scale: 1.5,
             ease: "power2.out"
           },
-          "-=1"
+          "-=1.5"
         );
     },
     beforeLeave(el) {

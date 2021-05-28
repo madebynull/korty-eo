@@ -19,10 +19,12 @@
     display: flex;
     flex-direction: column;
     overflow: auto;
+    height: 80vh;
 
     @include media(">600px") {
       padding-top: 96px;
       overflow: hidden;
+      height: unset;
     }
 
     .home-link {
