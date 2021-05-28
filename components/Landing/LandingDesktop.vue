@@ -57,7 +57,7 @@
             <hover-link
               label="VLOGS + INTERVIEWS"
               assetUrl="https://res.cloudinary.com/dmwfd0zhh/video/upload/q_auto,f_auto/v1620859386/Korty/YT_n9yqbh.mp4"
-              href="/"
+              href="https://www.youtube.com/channel/UCTFFhYhkLkxjhcCdwUKmQ5g"
             >
               <sup class="c-hoverlink__super">01</sup>
               <div class="link-overflow">
@@ -77,7 +77,7 @@
             <hover-link
               label="Video Mashups"
               assetUrl="https://res.cloudinary.com/dmwfd0zhh/video/upload/q_auto,f_auto/v1622155232/Korty/IG_rwtt50.mp4"
-              href="/"
+              href="https://www.instagram.com/korty_eo/"
             >
               <sup class="c-hoverlink__super">02</sup>
               <div class="link-overflow">
@@ -118,7 +118,7 @@
             <hover-link
               label="Modelling"
               assetUrl="https://res.cloudinary.com/dmwfd0zhh/video/upload/v1622155206/Korty/YT_model_wpxhbg.mp4"
-              href="/"
+              href="https://www.instagram.com/korty_eo/"
             >
               <sup class="c-hoverlink__super">03</sup>
               <div class="link-overflow">

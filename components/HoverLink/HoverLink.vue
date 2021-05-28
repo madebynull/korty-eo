@@ -1,5 +1,5 @@
 <template>
-  <a :href="href" ref="hoverLink" class="menu__item">
+  <a :href="href" target="_blank" ref="hoverLink" class="menu__item">
     <span class="menu__item-label">
       <slot />
     </span>

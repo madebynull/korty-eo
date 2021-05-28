@@ -53,10 +53,12 @@
 
         <div class="c-job">
           <h2 class="c-job__title align-right ml-auto">
-            <span
-              >VL<span class="fraunces">O</span>GS
-              <span class="fraunces">+</span></span
-            >
+            <a href="https://www.youtube.com/results?search_query=korty+eo">
+              <span
+                >VL<span class="fraunces">O</span>GS
+                <span class="fraunces">+</span></span
+              >
+            </a>
             <br />
             INTERVIEWS
           </h2>
@@ -75,7 +77,7 @@
 
         <div class="c-job">
           <div class="c-job__title max">
-            <a href="/">
+            <a href="https://www.instagram.com/korty_eo/">
               <span>VIDE<span class="fraunces">O</span> </span>
               <br />
               <span class="align-right bottom-text">
@@ -104,7 +106,7 @@
 
         <div class="c-job">
           <h2 class="c-job__title align-right">
-            <a href="/">
+            <a href="https://www.instagram.com/korty_eo/">
               <span>M<span class="fraunces">O</span>DELLING</span>
             </a>
           </h2>
