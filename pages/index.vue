@@ -19,14 +19,11 @@ export default {
     css: false,
     appear: true,
     beforeEnter(el) {
-      console.log(el);
       gsap.set(el, {
         opacity: 0
       });
-      console.log("before enter");
     },
     enter(el, done) {
-      console.log("entering");
       const tl = gsap.timeline({
         onComplete: done
       });

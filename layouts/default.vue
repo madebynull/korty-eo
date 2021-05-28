@@ -22,7 +22,6 @@ export default {
   },
   methods: {
     leave(el, done) {
-      console.log("opacity");
       const timeline = gsap.timeline({
         onComplete: done
       });

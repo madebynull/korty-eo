@@ -123,11 +123,6 @@ export default {
       preloader.style.height = `${window.innerHeight}px`;
     });
   },
-  watch: {
-    percentageLoaded(newValue, oldValue) {
-      // console.log(newValue, oldValue);
-    }
-  },
   methods: {
     async preload() {
       const totalImages = this.toBePreloaded.length;
@@ -151,7 +146,6 @@ export default {
         this.toBePreloaded.map(async (image, index) => {
           await preloadImage(image);
           loadedCount++;
-          // console.log(1 - loadedCount / totalImages);
           const percentage = Math.floor((100 / totalImages) * loadedCount);
           this.percentageLoaded = percentage;
 
@@ -220,8 +214,6 @@ export default {
                 });
             }
           });
-
-          console.log(tween.duration());
         })
       );
     },

@@ -31,7 +31,6 @@ export default {
 
   mounted() {
     const hoverRef = this.$refs.hoverLink;
-    // console.log(this.$props);
     new Menu(hoverRef);
   }
 };

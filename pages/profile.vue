@@ -533,13 +533,11 @@ export default {
     css: false,
     appear: true,
     beforeEnter(el) {
-      console.log(el);
       gsap.set(el, {
         opacity: 0
       });
     },
     enter(el, done) {
-      console.log("entering");
       const tl = gsap.timeline({
         onComplete: done
       });
@@ -743,11 +741,7 @@ export default {
 
           onUpdate(self) {
             let skew = clamp(self.getVelocity() / -230);
-            // const bounce = scaleClamp(
-            //   1 - Math.abs((self.getVelocity() / -300) * 0.25)
-            // );
-            // console.log(coachellaDesc.parentNode.offsetLeft);
-            // console.log(self.scroll());
+
             const direction = self.direction;
             const snapDifference =
               self.progress * self.end - (self.end - window.innerWidth);
