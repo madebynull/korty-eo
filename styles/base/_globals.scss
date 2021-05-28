@@ -137,3 +137,22 @@ p {
   background: transparent;
   letter-spacing: -0.5px;
 }
+
+.span-overflow {
+  overflow: hidden;
+  // line-height: 1.4;
+
+  .ov-inner {
+    display: inline-block;
+    transform: translateY(-5%);
+  }
+}
+
+.link-overflow {
+  overflow: hidden;
+  display: inline-flex;
+}
+
+.ov-h {
+  overflow: hidden;
+}

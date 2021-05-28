@@ -22,10 +22,16 @@
           <div class="inner" />
         </div>
         <div class="c-name__details">
-          <h1 class="details-title">korty_eo</h1>
-          <p class="details-jd">
-            FILMAKER & <br />
-            YOUTUBER
+          <h1 class="details-title span-overflow">
+            <span class="ov-inner">
+              korty_eo
+            </span>
+          </h1>
+          <p class="details-jd span-overflow">
+            <span class="ov-inner">
+              FILMAKER & <br />
+              YOUTUBER
+            </span>
           </p>
         </div>
 
@@ -39,10 +45,14 @@
       </div>
       <div class="hero-links">
         <div class="c-hoverlink hover-link-1">
-          <p>
-            Based in Lagos, Nigeria. Korty runs a youtube channel where she
-            posts -
-          </p>
+          <div class="span-overflow">
+            <div class="ov-inner">
+              <p>
+                Based in Lagos, Nigeria. Korty runs a youtube channel where she
+                posts -
+              </p>
+            </div>
+          </div>
           <div>
             <hover-link
               label="VLOGS + INTERVIEWS"
@@ -50,10 +60,14 @@
               href="/"
             >
               <sup class="c-hoverlink__super">01</sup>
-              <AnimatedLink>
-                VL<span class="fraunces">O</span>GS
-                <span class="fraunces">+</span> INTERVIEWS
-              </AnimatedLink>
+              <div class="link-overflow">
+                <span class="ov-inner">
+                  <AnimatedLink>
+                    VL<span class="fraunces">O</span>GS
+                    <span class="fraunces">+</span> INTERVIEWS
+                  </AnimatedLink>
+                </span>
+              </div>
             </hover-link>
           </div>
         </div>
@@ -66,22 +80,34 @@
               href="/"
             >
               <sup class="c-hoverlink__super">02</sup>
-              <AnimatedLink>
-                VIDE<span class="fraunces">O</span> MASHUPS
-              </AnimatedLink>
+              <div class="link-overflow">
+                <span class="ov-inner">
+                  <AnimatedLink>
+                    VIDE<span class="fraunces">O</span> MASHUPS
+                  </AnimatedLink>
+                </span>
+              </div>
             </hover-link>
           </div>
-          <p>
-            these mostly go on instagram to her 23k plus audience. 🔥 edits, we
-            highly recommend.
-          </p>
+          <div class="span-overflow">
+            <span class="ov-inner">
+              <p>
+                these mostly go on instagram to her 23k plus audience. 🔥 edits,
+                we highly recommend.
+              </p>
+            </span>
+          </div>
         </div>
         <div class="c-hoverlink hover-link-3">
           <div class="image-details">
-            <p>
-              She has walked for top fashion houses accross West Africa
-            </p>
-            <div class="c-image">
+            <div class="span-overflow">
+              <span class="ov-inner">
+                <p>
+                  She has walked for top fashion houses accross West Africa
+                </p>
+              </span>
+            </div>
+            <div class="c-image c-model__image ov-h">
               <img
                 src="https://res.cloudinary.com/dmwfd0zhh/image/upload/q_auto,f_auto/v1620865175/Korty/Rectangle_11_tuj1nt.jpg"
                 alt=""
@@ -95,9 +121,13 @@
               href="/"
             >
               <sup class="c-hoverlink__super">03</sup>
-              <AnimatedLink>
-                M<span class="fraunces">O</span>DELLING
-              </AnimatedLink>
+              <div class="link-overflow">
+                <span class="ov-inner">
+                  <AnimatedLink>
+                    M<span class="fraunces">O</span>DELLING
+                  </AnimatedLink>
+                </span>
+              </div>
             </hover-link>
           </div>
         </div>

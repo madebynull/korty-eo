@@ -529,24 +529,24 @@ export default {
     name: "profile",
     mode: "out-in",
     css: false,
-    appear: true
-    // beforeEnter(el) {
-    //   console.log(el);
-    //   gsap.set(el, {
-    //     opacity: 0
-    //   });
-    //   console.log("before enter");
-    // },
-    // enter(el, done) {
-    //   console.log("entering");
-    //   const tl = gsap.timeline({
-    //     onComplete: done
-    //   });
-    //   tl.to(el, {
-    //     opacity: 1,
-    //     duration: 2
-    //   });
-    // }
+    appear: true,
+    beforeEnter(el) {
+      console.log(el);
+      // gsap.set(el, {
+      //   opacity: 0
+      // });
+      // console.log("before enter");
+    },
+    enter(el, done) {
+      // console.log("entering");
+      // const tl = gsap.timeline({
+      //   onComplete: done
+      // });
+      // tl.to(el, {
+      //   opacity: 1,
+      //   duration: 2
+      // });
+    }
   },
   components: { AnimatedLink, Arrow, CircularLink, AnimatedArrow },
   mounted() {

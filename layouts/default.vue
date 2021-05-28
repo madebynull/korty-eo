@@ -1,9 +1,9 @@
 <template>
   <div class="c-app">
     <Nuxt v-if="imagesLoaded" />
-    <transition @leave="leave" :css="false"
-      ><preloader v-if="!imagesLoaded"
-    /></transition>
+    <transition @leave="leave" :css="false">
+      <preloader v-if="!imagesLoaded" />
+    </transition>
     <modal />
   </div>
 </template>
