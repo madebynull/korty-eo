@@ -6,7 +6,7 @@
         direction: 'vertical',
         smooth: true,
         getSpeed: true,
-        lerp: 0.08,
+        lerp: 0.1,
         smartphone: {
           smooth: true
         },
@@ -191,7 +191,9 @@
                         class="skew-image"
                       />
                     </div>
-                    <animated-arrow href="/" />
+                    <animated-arrow
+                      href="https://kortyeo.com/partner/nike-just-gbese"
+                    />
                   </div>
                   <div class="nike__right">
                     <div class="nike__image2">
@@ -236,7 +238,7 @@
                     Worked as a content lead at Empawa Africa, single handedly
                     directing and producing shows.
                   </p>
-                  <animated-arrow href="/" />
+                  <animated-arrow href="https://kortyeo.com/partner/empawa" />
                 </div>
                 <h1>EMPAWA</h1>
               </div>
@@ -258,7 +260,7 @@
                     />
                   </div>
                   <div class="zikoko__desc">
-                    <animated-arrow href="/" />
+                    <animated-arrow href="https://kortyeo.com/partner/zikoko" />
                     <div>
                       <h1>
                         ZIKOKO
@@ -291,7 +293,9 @@
                         Nigerian stylist, Mariam Aduke.
                       </p>
                     </div>
-                    <animated-arrow href="/" />
+                    <animated-arrow
+                      href="https://kortyeo.com/partner/coachella"
+                    />
                   </div>
                 </div>
               </div>
@@ -330,7 +334,7 @@
                   <p>
                     Edited a promotional video for Nigerian shoe brand, Keeks.
                   </p>
-                  <animated-arrow href="/" />
+                  <animated-arrow href="https://kortyeo.com/partner/keeks" />
                 </div>
               </div>
               <div class="pamane">
@@ -350,7 +354,7 @@
                       />
                     </div>
                     <div class="pamane__desc">
-                      <animated-arrow href="/" />
+                      <animated-arrow href="https://www.wearpamane.com/" />
                       <p>
                         Photo modelling for the Lagos based clothing brand,
                         Pamane.
@@ -366,7 +370,9 @@
             <div class="work__quote">
               <div>
                 <div class="desc">
-                  <animated-arrow href="/" />
+                  <animated-arrow
+                    href="https://www.youtube.com/channel/UCTFFhYhkLkxjhcCdwUKmQ5g"
+                  />
                   <p>
                     Now, Korty is basically freelancing - making videos for her
                     youtube channnel, instagram and clients.
