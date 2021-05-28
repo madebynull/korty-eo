@@ -23,6 +23,7 @@
 
     @include media(">600px") {
       padding-top: 96px;
+      overflow: hidden;
     }
 
     .home-link {
