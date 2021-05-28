@@ -19,10 +19,42 @@
             <h1>
               WHO MADE THIS SITE?
             </h1>
-            <p>Seyi - Development and Art Direction</p>
-            <p>Isaac - UI Design and Art Direction</p>
-            <p>Femi - Motion & Interaction Design</p>
-            <p>Special thanks to Sebiomo</p>
+            <p>
+              <a
+                href="https://twitter.com/seyi__xo"
+                target="__blank"
+                style="text-decoration: underline;"
+                >Seyi</a
+              >
+              - Development and Art Direction
+            </p>
+            <p>
+              <a
+                href="https://twitter.com/isaacfayemi_"
+                target="__blank"
+                style="text-decoration: underline;"
+                >Isaac</a
+              >
+              - UI Design and Art Direction
+            </p>
+            <p>
+              <a
+                href="https://twitter.com/heyFaash"
+                target="__blank"
+                style="text-decoration: underline;"
+                >Femi</a
+              >
+              - Motion & Interaction Design
+            </p>
+            <p>
+              Special thanks to
+              <a
+                href="https://twitter.com/sebiomo_"
+                target="__blank"
+                style="text-decoration: underline;"
+                >Sebiomo</a
+              >
+            </p>
           </div>
           <div class="right">
             <img
