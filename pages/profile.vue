@@ -595,7 +595,7 @@ export default {
           {
             yPercent: 100,
             duration: 1,
-            skewY: 20,
+            skewY: 5,
             stagger: {
               amount: 0.1
             },
