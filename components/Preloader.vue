@@ -74,7 +74,9 @@ export default {
         "https://res.cloudinary.com/dmwfd0zhh/image/upload/q_auto,f_auto/v1621542856/Korty/153576857_480678352950294_7236937184248464472_n_3_ktb05h.jpg",
         "https://res.cloudinary.com/dmwfd0zhh/image/upload/q_auto,f_auto/v1621568117/Korty/Rectangle_23_dxgpdz.jpg",
         "https://res.cloudinary.com/dmwfd0zhh/image/upload/q_auto,f_auto/v1621637709/Korty/korty-archive-1_kjvsf4.jpg",
-        "https://res.cloudinary.com/dmwfd0zhh/image/upload/q_auto,f_auto/v1621921592/Korty/Rectangle_34_faqgls.jpg",
+        "https://res.cloudinary.com/dmwfd0zhh/image/upload/q_auto,f_auto/v1621921592/Korty/Rectangle_34_faqgls.jpg"
+      ],
+      otherstoPreload: [
         "https://res.cloudinary.com/dmwfd0zhh/image/upload/q_auto,f_auto/v1621921685/Korty/Rectangle_34-1_firxdx.jpg",
         "https://res.cloudinary.com/dmwfd0zhh/image/upload/q_auto,f_auto/v1621921602/Korty/Rectangle_36_lj8azl.jpg",
         "https://res.cloudinary.com/dmwfd0zhh/image/upload/q_auto,f_auto/v1621921624/Korty/Rectangle_37_er4jkv.jpg",
@@ -113,6 +115,7 @@ export default {
   mounted() {
     const preloader = this.$refs.preloader;
     this.preload();
+    this.preloadOthers();
 
     preloader.style.height = `${window.innerHeight}px`;
 
@@ -156,7 +159,7 @@ export default {
 
           tween = gsap.to(".p-inner", {
             yPercent: -Math.min(loadedCount * 100, (loadedCount - 2) * 100),
-            duration: 15,
+            duration: 5,
             ease: "none",
             onComplete: () => {
               if (percentage !== 100) return;
@@ -223,6 +226,11 @@ export default {
           console.log(tween.duration());
         })
       );
+    },
+    async preloadOthers() {
+      this.otherstoPreload.map(async image => {
+        await preloadImage(image);
+      });
     },
     closeLoader() {
       this.$store.commit("updateImagesLoaded", true);

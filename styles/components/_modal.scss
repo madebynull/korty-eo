@@ -19,7 +19,7 @@
     height: 80vh;
     display: flex;
     flex-direction: column;
-    overflow: scroll;
+    overflow: auto;
 
     @include media(">600px") {
       padding-top: 96px;
