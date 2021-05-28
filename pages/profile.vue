@@ -535,7 +535,6 @@ export default {
       gsap.set(el, {
         opacity: 0
       });
-      console.log("before enter");
     },
     enter(el, done) {
       console.log("entering");
@@ -545,7 +544,15 @@ export default {
       tl.to(el, {
         opacity: 1,
         duration: 2
-      });
+      }).from(
+        ".hero__image img",
+        {
+          duration: 1,
+          scale: 1.2,
+          ease: "power2.out"
+        },
+        "-=2"
+      );
     },
     beforeLeave(el) {
       gsap.set(".c-exit", {
@@ -599,7 +606,7 @@ export default {
             duration: 1.5,
             ease: "Expo.easeInOut"
           },
-          "-=.5"
+          "-=1"
         );
     }
   },

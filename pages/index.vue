@@ -108,7 +108,7 @@ export default {
           {
             yPercent: 100,
             duration: 1,
-            skewY: 20,
+            skewY: 10,
             stagger: {
               amount: 0.1
             },
@@ -131,7 +131,7 @@ export default {
             duration: 1.5,
             ease: "Expo.easeInOut"
           },
-          "-=.5"
+          "-=1"
         );
     }
   },

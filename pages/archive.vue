@@ -375,8 +375,100 @@
 import AnimatedArrow from "@/components/AnimatedArrow.vue";
 import AnimatedLink from "@/components/AnimatedLink/AnimatedLink.vue";
 import { map, clamp } from "@/utils/index";
+import gsap from "gsap/all";
 export default {
   components: { AnimatedArrow, AnimatedLink },
+  transition: {
+    name: "profile",
+    mode: "out-in",
+    css: false,
+    appear: true,
+    beforeEnter(el) {
+      gsap.set(el, {
+        opacity: 0
+      });
+    },
+    enter(el, done) {
+      const tl = gsap.timeline({
+        onComplete: done
+      });
+      tl.to(el, {
+        opacity: 1,
+        duration: 1.5
+      })
+        .set(".archive__images .c-image", { autoAlpha: 1 }, "-=1.5")
+        .from(
+          ".archive__images .c-image",
+          {
+            duration: 1.5,
+            yPercent: 100,
+            ease: "Expo.easeInOut"
+          },
+          "-=1.5"
+        )
+        .from(".archive__images .bg-image", {
+          duration: 1.5,
+          yPercent: -100,
+          delay: -1.5,
+          ease: "Expo.easeInOut"
+        });
+    },
+    beforeLeave(el) {
+      gsap.set(".c-exit", {
+        zIndex: 30,
+        top: "unset",
+        bottom: 0
+      });
+      gsap.set(".exit-span", {
+        opacity: 1
+      });
+    },
+    leave(el, done) {
+      const tl = gsap.timeline({
+        onComplete: done
+      });
+
+      tl.to(".c-exit", {
+        height: window.innerHeight,
+        duration: 1.5,
+        ease: "Expo.easeInOut"
+      })
+        .set(".c-exit", {
+          top: 0,
+          bottom: "unset"
+        })
+        .from(
+          ".exit-span",
+          {
+            yPercent: 100,
+            duration: 1,
+            skewY: 20,
+            stagger: {
+              amount: 0.1
+            },
+            ease: "power2.out"
+          },
+          "-=.5"
+        )
+        .set(el, {
+          opacity: 0
+        })
+        .to(".exit-span", {
+          opacity: 0,
+          duration: 1,
+          ease: "power2.out"
+        })
+        .to(
+          ".c-exit",
+          {
+            height: 0,
+            duration: 1.5,
+            ease: "Expo.easeInOut"
+          },
+          "-=1"
+        );
+    }
+  },
   mounted() {
     const locomotive = this.$refs.scroller.locomotive;
     this.$nuxt.$emit("update-locomotive");
