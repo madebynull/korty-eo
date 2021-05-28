@@ -1,5 +1,8 @@
 <template>
   <div>
+    <svg class="cursor" width="32" ref="cursor" height="32" viewBox="0 0 20 20">
+      <circle class="cursor__inner" cx="10" cy="10" r="5" />
+    </svg>
     <LocomotiveScroll
       ref="scroller"
       :getted-options="{
@@ -529,6 +532,7 @@ import Arrow from "../components/Arrow.vue";
 import CircularLink from "../components/CircularLink/CircularLink.vue";
 import AnimatedArrow from "../components/AnimatedArrow.vue";
 import { ScrollToPlugin } from "gsap/all";
+import { Cursor } from "~/animations/cursor";
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
@@ -629,6 +633,7 @@ export default {
   components: { AnimatedLink, Arrow, CircularLink, AnimatedArrow },
   mounted() {
     const worksRef = this.$refs.works;
+    this.beginCursor();
 
     this.initScrolltrigger();
     this.marqueeAnimation();
@@ -641,6 +646,18 @@ export default {
   methods: {
     openModal() {
       this.$store.commit("updateModal", true);
+    },
+    beginCursor() {
+      const cursorRef = this.$refs.cursor;
+      const cursor = new Cursor(cursorRef);
+      [...document.querySelectorAll("a")].forEach(link => {
+        link.addEventListener("mouseenter", () => cursor.enter());
+        link.addEventListener("mouseleave", () => cursor.leave());
+      });
+      [...document.querySelectorAll("button")].forEach(link => {
+        link.addEventListener("mouseenter", () => cursor.enter());
+        link.addEventListener("mouseleave", () => cursor.leave());
+      });
     },
     initScrolltrigger() {
       const locomotive = this.$refs.scroller.locomotive;

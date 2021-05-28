@@ -1,5 +1,8 @@
 <template>
   <div class="c-archive">
+    <svg class="cursor" width="32" ref="cursor" height="32" viewBox="0 0 20 20">
+      <circle class="cursor__inner" cx="10" cy="10" r="5" />
+    </svg>
     <div class="c-archive__header">
       <nuxt-link to="/profile">
         <animated-link class="c-bezier">
@@ -376,6 +379,8 @@ import AnimatedArrow from "@/components/AnimatedArrow.vue";
 import AnimatedLink from "@/components/AnimatedLink/AnimatedLink.vue";
 import { map, clamp } from "@/utils/index";
 import gsap from "gsap/all";
+import { Cursor } from "~/animations/cursor";
+
 export default {
   components: { AnimatedArrow, AnimatedLink },
   transition: {
@@ -472,6 +477,7 @@ export default {
   mounted() {
     const locomotive = this.$refs.scroller.locomotive;
     this.$nuxt.$emit("update-locomotive");
+    this.beginCursor();
 
     let direction = "horizontal";
     window.addEventListener("resize", () => {
@@ -506,6 +512,18 @@ export default {
   methods: {
     openModal() {
       this.$store.commit("updateModal", true);
+    },
+    beginCursor() {
+      const cursorRef = this.$refs.cursor;
+      const cursor = new Cursor(cursorRef);
+      [...document.querySelectorAll("a")].forEach(link => {
+        link.addEventListener("mouseenter", () => cursor.enter());
+        link.addEventListener("mouseleave", () => cursor.leave());
+      });
+      [...document.querySelectorAll("button")].forEach(link => {
+        link.addEventListener("mouseenter", () => cursor.enter());
+        link.addEventListener("mouseleave", () => cursor.leave());
+      });
     }
   }
 };

@@ -20,6 +20,7 @@ export default {
   computed: {
     ...mapState(["modalOpen", "imagesLoaded"])
   },
+
   methods: {
     leave(el, done) {
       const timeline = gsap.timeline({

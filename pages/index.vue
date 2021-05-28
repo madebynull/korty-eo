@@ -1,5 +1,8 @@
 <template>
   <div class="c-landing">
+    <svg class="cursor" width="32" ref="cursor" height="32" viewBox="0 0 20 20">
+      <circle class="cursor__inner" cx="10" cy="10" r="5" />
+    </svg>
     <desktop />
     <mobile />
   </div>
@@ -11,6 +14,8 @@ import Mobile from "~/components/Landing/LandingMobile.vue";
 import AnimatedLink from "~/components/AnimatedLink/AnimatedLink.vue";
 import CircularLink from "~/components/CircularLink/CircularLink.vue";
 import gsap from "gsap/all";
+import { Cursor } from "~/animations/cursor";
+
 export default {
   components: { desktop, Mobile, AnimatedLink, CircularLink },
   transition: {
@@ -134,10 +139,25 @@ export default {
   },
 
   mounted() {
+    this.beginCursor();
     this.$nuxt.$emit("update-locomotive");
   },
 
-  methods: {}
+  methods: {
+    beginCursor() {
+      const cursorRef = this.$refs.cursor;
+      const cursor = new Cursor(cursorRef);
+      [...document.querySelectorAll("a")].forEach(link => {
+        link.addEventListener("mouseenter", () => cursor.enter());
+        link.addEventListener("mouseleave", () => cursor.leave());
+      });
+
+      [...document.querySelectorAll("button")].forEach(link => {
+        link.addEventListener("mouseenter", () => cursor.enter());
+        link.addEventListener("mouseleave", () => cursor.leave());
+      });
+    }
+  }
 };
 </script>
 

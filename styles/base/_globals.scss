@@ -191,3 +191,33 @@ p {
     display: inline-block;
   }
 }
+
+.cursor {
+  display: none;
+}
+
+@media (any-pointer: fine) {
+  .cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: block;
+    pointer-events: none;
+    z-index: 15;
+
+    @include media("<=tablet") {
+      display: none;
+    }
+  }
+
+  .cursor__inner {
+    fill: #e0530e;
+    stroke: none;
+    stroke-width: 1px;
+    opacity: 0.7;
+  }
+
+  .no-js .cursor {
+    display: none;
+  }
+}
