@@ -959,6 +959,10 @@
             text-align: center;
             @include variableFonts(40, 120);
           }
+
+          @include media(">=1500px") {
+            max-width: unset;
+          }
         }
 
         .c-bottom {

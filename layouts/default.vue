@@ -39,8 +39,5 @@ export default {
 </script>
 
 <style scoped>
-.c-app {
-  max-width: 1650px;
-  margin: 0 auto;
-}
+
 </style>
