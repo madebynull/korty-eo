@@ -812,6 +812,8 @@ export default {
           // markers: true
         }
       });
+
+      // Get the scrolltrigger instance on the scroll animation
       const self = anim.scrollTrigger;
       ctaButton.addEventListener("click", () => {
         const snapProgress =
@@ -822,6 +824,7 @@ export default {
         self.scroll(self.start + snapDeduction + 50);
       });
 
+      // Rotate the coachella circle as it enters/exits the viewport
       timeline.to(coachellaDesc, {
         rotate: "2deg",
         overwrite: "auto",
@@ -842,11 +845,13 @@ export default {
         }
       });
 
+      // force 3D for performance
       gsap.set(".skew-image", {
         transformOrigin: "right center",
         force3D: true
       });
 
+      // Update locomotive on resize
       ScrollTrigger.addEventListener("refresh", () => {
         this.$nuxt.$emit("update-locomotive");
       });

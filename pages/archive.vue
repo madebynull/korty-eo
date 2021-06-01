@@ -383,6 +383,10 @@ import { Cursor } from "~/animations/cursor";
 
 export default {
   components: { AnimatedArrow, AnimatedLink },
+
+  /**
+   * TODO: outsource the exit animations into one and reuse
+   */
   transition: {
     name: "profile",
     mode: "out-in",

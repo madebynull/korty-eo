@@ -149,6 +149,7 @@ export default {
           const percentage = Math.floor((100 / totalImages) * loadedCount);
           this.percentageLoaded = percentage;
 
+          // Preload first batch of images, and when the preloader percentages are done animating, animate out the preloader
           gsap.to(".p-inner", {
             yPercent: -Math.min(loadedCount * 100, (loadedCount - 2) * 100),
             duration: 4.5,
