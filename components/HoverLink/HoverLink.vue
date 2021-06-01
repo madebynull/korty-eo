@@ -20,7 +20,7 @@
 </template>
 
 <script>
-import Menu from "~/animations/menuHover";
+import HoverVideo from "~/animations/hoverVideo";
 export default {
   props: {
     label: String,
@@ -31,7 +31,7 @@ export default {
 
   mounted() {
     const hoverRef = this.$refs.hoverLink;
-    new Menu(hoverRef);
+    new HoverVideo(hoverRef);
   }
 };
 </script>
