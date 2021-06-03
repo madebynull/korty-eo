@@ -39,10 +39,10 @@
           </div>
         </div>
       </div>
-      <h1 class="c-preloader__footer">
+      <h2 class="c-preloader__footer">
         KORTY <br />
         ENIOLA
-      </h1>
+      </h2>
     </div>
   </div>
 </template>
