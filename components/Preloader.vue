@@ -4,7 +4,7 @@
       <!-- <button @click="closeLoader">Close</button> -->
       <div>
         <div class="percentages__container">
-          <h1 class="fraunces">
+          <h1 class="fraunces heading-1">
             <span class="percentages">
               <div class="mark">
                 ‘
@@ -39,10 +39,10 @@
           </div>
         </div>
       </div>
-      <h3 class="c-preloader__footer">
+      <h1 class="c-preloader__footer">
         KORTY <br />
         ENIOLA
-      </h3>
+      </h1>
     </div>
   </div>
 </template>
