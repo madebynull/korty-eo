@@ -13,6 +13,12 @@ export default {
         name: "description",
         content:
           "Eniola Korty Olanrewaju is a Lagos based freelance filmmaker & youtuber..."
+      },
+      {
+        property: "og:image",
+        hid: "og:image",
+        content:
+          "https://res.cloudinary.com/dmwfd0zhh/image/upload/v1625872208/Korty/A4_-_2_1_lcy5da.jpg"
       }
     ],
     link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }]
