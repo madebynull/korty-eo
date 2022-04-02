@@ -3,7 +3,6 @@
     ref="scroller"
     :getted-options="{
       offset: ['30%', 0],
-      smooth: true,
       direction: 'vertical'
       // Other options
     }"

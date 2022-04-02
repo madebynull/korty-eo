@@ -22,16 +22,7 @@
         direction: 'horizontal',
         smooth: true,
         getSpeed: true,
-        lerp: 0.08,
-        smartphone: {
-          smooth: true,
-          direction: 'vertical'
-        },
-        tablet: {
-          smooth: true,
-          direction: 'vertical',
-          breakpoint: 768
-        }
+        lerp: 0.08
         // Other options
       }"
     >

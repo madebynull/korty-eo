@@ -9,13 +9,7 @@
         direction: 'vertical',
         smooth: true,
         getSpeed: true,
-        lerp: 0.1,
-        smartphone: {
-          smooth: true
-        },
-        tablet: {
-          smooth: true
-        }
+        lerp: 0.1
         // Other options
       }"
     >
