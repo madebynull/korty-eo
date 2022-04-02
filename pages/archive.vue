@@ -420,6 +420,12 @@ export default {
           yPercent: -100,
           delay: -1.5,
           ease: "Expo.easeInOut"
+        })
+        .from(".archive__images .bg-image", {
+          duration: 1.5,
+          scale: 1.2,
+          delay: -1.4,
+          ease: "Expo.easeInOut"
         });
     },
     beforeLeave(el) {
