@@ -455,7 +455,7 @@
                   href="https://madebynull.com"
                   target="__blank"
                   style="text-decoration: underline;"
-                  >Made by Null :)</a
+                  >Made by Null</a
                 >
               </p>
               <div class="footer__image">
