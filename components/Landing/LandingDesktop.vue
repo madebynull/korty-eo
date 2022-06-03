@@ -117,7 +117,7 @@
           <div>
             <hover-link
               label="Modelling"
-              assetUrl="https://res.cloudinary.com/dmwfd0zhh/video/upload/v1622155206/Korty/YT_model_wpxhbg.mp4"
+              assetUrl="https://res.cloudinary.com/dmwfd0zhh/video/upload/q_auto,f_auto/v1622155206/Korty/YT_model_wpxhbg.mp4"
               href="https://www.instagram.com/korty_eo/"
             >
               <sup class="c-hoverlink__super">03</sup>
